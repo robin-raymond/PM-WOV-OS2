@@ -1,0 +1,168 @@
+#define _COMMON_CWINDOW_H_
+#define _COMMON_NFILE_H_
+#include "common.h"
+
+#include "wargame.h"
+
+#include "register.hpp"
+#include "thankyou.hpp"
+#include "sorry.hpp"
+
+#define SCRAMBLECODE1 345987123
+#define SCRAMBLECODE2 583294021
+
+char *g_CodeFile = "WOTVTHNK.YOU";
+
+ULONG ToSerialNo(PSZ Sour)
+{
+	UCHAR *Source = (UCHAR *)Sour;
+
+	ULONG Number = 1500;
+	if ((*Source) == 0)
+		return 1294854921;
+
+	ULONG Pos = 0;
+	ULONG Old = (*Source);
+
+	for(; *Source != 0; ++Pos, ++Source)
+	{
+		if (((ULONG)*Source >= (ULONG)'a') && ((ULONG)*Source <= (ULONG)'z'))
+			*Source = (UCHAR)((ULONG)*Source - (ULONG)(UCHAR)'a' + (ULONG)(UCHAR)'A');
+
+		Number += (Pos + 1) * (((ULONG)*Source)^((ULONG)134));
+		if (Old != 0)
+			Number *= Old;
+
+		Old = *Source;
+	}
+	return Number;
+}
+
+ULONG CodeToLong(PSZ Sour)
+{
+	ULONG Number = 0;
+
+	while(*Sour != 0)
+	{
+		Number *= 10;
+		if (((ULONG)*Sour >= (ULONG)'0') && ((ULONG)*Sour <= (ULONG)'9'))
+		{
+			Number += (ULONG)(*Sour) - ((ULONG)'0');
+		}
+		++Sour;
+	}
+	return Number;
+}
+
+PPROCESSHEADER(CRegisterDlg)
+{
+	STARTPROCESSING()
+
+		PONINITDLG()
+//		PONCHAR()
+
+		STARTCMDPROCESSING()
+			PONCMDPUSHBUTTON()
+		ENDCMDPROCESSING()
+	ENDPROCESSING()
+}
+
+BOOL CRegisterDlg::OnInitDlg(MRESULT &, CWindow, PVOID)
+{
+	GetChild(m_Code1, FID_CODE_1);
+	GetChild(m_Code2, FID_CODE_2);
+
+	return TRUE;
+}
+/*
+BOOL CRegisterDlg::OnChar(MRESULT &, USHORT flags, UCHAR, UCHAR, USHORT, USHORT Virtual)
+{
+	if (flags & KC_KEYUP)
+		return FALSE;
+
+	if (Virtual == VK_ESC)
+		return TRUE;
+
+	return FALSE;
+}
+*/
+
+BOOL CRegisterDlg::OnCmdPushButton(MRESULT &, USHORT Which, BOOL)
+{
+	switch(Which)
+	{
+		case BID_OKAY:
+							CheckCode();
+							DismissDlg(TRUE);
+							return TRUE;
+		case BID_CANCEL:
+							DismissDlg(FALSE);
+							return TRUE;
+	}
+	return FALSE;
+}
+
+void CRegisterDlg::CheckCode()
+{
+	char Sour1[40] = "";
+	char Sour2[40] = "";
+
+	ULONG Val1, Val2;
+
+	m_Code1.GetWindowText((PSZ)Sour1, (ULONG)sizeof(Sour1));
+	m_Code2.GetWindowText((PSZ)Sour2, (ULONG)sizeof(Sour2));
+
+	Val1 = ToSerialNo((PSZ)Sour1);
+	Val2 = CodeToLong((PSZ)Sour2);
+
+	if (Val1 == Val2)
+	{
+		NFile CodeFile;
+
+		if (CodeFile.Open(g_CodeFile, NFILE_WRITE | NFILE_BLOCKREADWRITE | NFILE_CREATE) == FERROR_NO_ERROR)
+		{
+			Val1 ^= SCRAMBLECODE1;
+			Val2 ^= SCRAMBLECODE2;
+
+			CodeFile << Val1;
+			CodeFile << Val2;
+
+			CodeFile.Close();
+		}
+
+		CThankYouDlg Test;
+
+		Test.Dlg(CWindow(HWND_DESKTOP), *this, NULLHANDLE, DID_THANK_YOU);
+	}
+	else
+	{
+		CSorryDlg Test;
+
+		Test.Dlg(CWindow(HWND_DESKTOP), *this, NULLHANDLE, DID_SORRY);
+	}
+}
+
+BOOL VerifyRegister()
+{
+	BOOL Answer = FALSE;
+
+	NFile CodeFile;
+
+	if (CodeFile.Open(g_CodeFile, NFILE_READ | NFILE_BLOCKWRITE) == FERROR_NO_ERROR)
+	{
+		ULONG Val1;
+		ULONG Val2;
+
+		CodeFile >> Val1;
+		CodeFile >> Val2;
+
+		if ((Val1 ^ SCRAMBLECODE1) == (Val2 ^ SCRAMBLECODE2))
+		{
+			Answer = TRUE;
+		}
+
+		CodeFile.Close();
+	}
+	return Answer;
+}
+

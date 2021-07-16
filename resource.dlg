@@ -1,0 +1,38 @@
+DLGINCLUDE DID_RESOURCES "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_RESOURCES LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "War of The Villages - Resource Mapping", DID_RESOURCES, 35, 10, 
+            220, 165, WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        GROUPBOX        "Resources", -1, 5, 0, 155, 160, NOT WS_GROUP
+        AUTORADIOBUTTON "~Ground Forces", RID_GROUND_FORCES, 10, 85, 75, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "~Tank", RID_TANK, 10, 75, 75, 10, WS_TABSTOP
+        AUTORADIOBUTTON "~Fast Tank", RID_FAST_TANK, 10, 65, 75, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "~Bomber Plane", RID_BOMBER_PLANE, 10, 55, 75, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "F~ighter Plane", RID_FIGHTER_PLANE, 10, 45, 75, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "~Long Range Missile Launcher", 
+                        RID_LONG_RANGE_MISSILE, 10, 35, 130, 10, WS_TABSTOP
+        AUTORADIOBUTTON "~Sand Buggy", RID_SAND_BUGGY, 10, 25, 65, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "Semi-~water Forces", RID_SEMI_WATER_FORCES, 10, 15, 
+                        95, 10, WS_TABSTOP
+        AUTORADIOBUTTON "~Rescue & Repair Helicopter", RID_RESCUE, 10, 5, 
+                        125, 10, WS_TABSTOP
+        DEFPUSHBUTTON   "~Next", BID_NEXT, 10, 135, 45, 15, WS_GROUP
+        PUSHBUTTON      "~Previous", BID_PREVIOUS, 60, 135, 45, 15
+        PUSHBUTTON      "~Accept", BID_OKAY, 170, 145, 45, 15
+        PUSHBUTTON      "~Help", BID_HELP, 170, 0, 45, 15
+        LTEXT           "Total Resources:", -1, 10, 105, 75, 10, DT_VCENTER
+        CONTROL         "", UID_TOTAL_RESOURCES, 90, 105, 25, 10, "CWindow", 
+                        WS_VISIBLE
+        LTEXT           "Resource Number:", -1, 10, 120, 75, 10, DT_VCENTER
+        CONTROL         "", UID_RESOURCE_NUMER, 90, 120, 25, 10, "CWindow", 
+                        WS_VISIBLE
+    END
+END
+

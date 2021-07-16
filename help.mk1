@@ -1,0 +1,6 @@
+!define BLANK ""
+m:\wargame\help.inf : m:\wargame\war.ipf
+ @m:
+ cd m:\wargame
+ ipfc  /inf /W3 war.ipf
+

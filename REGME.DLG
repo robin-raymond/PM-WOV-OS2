@@ -1,0 +1,26 @@
+DLGINCLUDE DID_REGISTER_ME "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_REGISTER_ME LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM WOV - Register Me!", DID_REGISTER_ME, 50, 5, 295, 134, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Dear User,", -1, 5, 115, 50, 13
+        LTEXT           "I created PM WOV in hopes you might enjoy it. If yo"
+                        "u do enjoy it, I would ask that you help contribute"
+                        " to the cost of making it. Compilers and computers "
+                        "are expensive [on a strick budget with a baby]. If "
+                        "you don't like it, remove PM WOV within 15 days.", 
+                        -1, 5, 80, 285, 33, DT_WORDBREAK
+        LTEXT           "I would like to make some super games, with sounds,"
+                        " 3-d annimation, etc, but I do not have the proper "
+                        "compiler or computer tools (and without extra $, I "
+                        "never will).", -1, 5, 50, 285, 28, DT_WORDBREAK
+        LTEXT           "I am only asking for $10 US or Canadian - which I a"
+                        "m sure you could scrap up from the change in your d"
+                        "resser. It isn't a lot of $, but it makes a world o"
+                        "f difference! (see Help->Registration for more...)", 
+                        -1, 5, 20, 285, 28, DT_WORDBREAK
+        PUSHBUTTON      "Thank-you", BID_OKAY, 235, 5, 55, 15
+    END
+END

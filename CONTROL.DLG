@@ -1,0 +1,56 @@
+DLGINCLUDE DID_CONTROL_CENTER "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_CONTROL_CENTER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Control Center", DID_CONTROL_CENTER, 55, 25, 190, 104, NOT 
+            FS_DLGBORDER | FS_BORDER | WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        GROUPBOX        "Current Position", GID_CURRENT_POSITION, 5, 65, 180, 
+                        35, NOT WS_GROUP
+        GROUPBOX        "Destination", GID_DESTINATION, 5, 5, 180, 55, NOT 
+                        WS_GROUP
+        RTEXT           "Attack:", TID_CC_ATTACK_CP, 50, 80, 40, 10, 
+                        DT_VCENTER
+        RTEXT           "Defense:", TID_CC_DEFENSE_CP, 50, 70, 40, 10, 
+                        DT_VCENTER | NOT WS_GROUP
+        CTEXT           "(X, Y)", TID_CC_XY_CP, 10, 80, 40, 10, DT_VCENTER | 
+                        NOT WS_GROUP
+        CONTROL         "", SLID_CC_ATTACK_CP, 95, 80, 60, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_READONLY | SLS_RIBBONSTRIP | SLS_HOMELEFT | 
+                        SLS_PRIMARYSCALE1 | WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", SLID_CC_DEFENSE_CP, 95, 70, 60, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_READONLY | SLS_RIBBONSTRIP | SLS_HOMELEFT | 
+                        SLS_PRIMARYSCALE1 | WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", UID_CC_BIT_CP, 155, 70, 25, 20, "CWindow", 
+                        WS_VISIBLE
+        CTEXT           "(X, Y)", TID_CC_XY_D, 10, 40, 40, 10, DT_VCENTER
+        RTEXT           "Attack:", TID_CC_ATTACK_D, 50, 40, 40, 10, 
+                        DT_VCENTER | NOT WS_GROUP
+        RTEXT           "Defense:", TID_CC_DEFENSE_D, 50, 30, 40, 10, 
+                        DT_VCENTER | NOT WS_GROUP
+        CONTROL         "", SLID_CC_ATTACK_D, 95, 40, 60, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_READONLY | SLS_RIBBONSTRIP | SLS_HOMELEFT | 
+                        SLS_PRIMARYSCALE1 | WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", SLID_CC_DEFENSE_D, 95, 30, 60, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_READONLY | SLS_RIBBONSTRIP | SLS_HOMELEFT | 
+                        SLS_PRIMARYSCALE1 | WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", UID_CC_BIT_D, 155, 30, 25, 20, "CWindow", 
+                        WS_VISIBLE
+        AUTOCHECKBOX    "Tracking weapon", CID_CC_TRACK_WEAPON, 10, 10, 85, 
+                        10, BS_NOPOINTERFOCUS | NOT WS_TABSTOP
+        DEFPUSHBUTTON   "~Turn", BID_OKAY, 150, 10, 30, 15, WS_GROUP
+        PUSHBUTTON      "~Find", BID_FIND, 115, 10, 30, 15
+        CONTROL         "", UID_CC_XY_CP, 10, 70, 40, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_CC_XY_D, 10, 30, 40, 10, "CWindow", 
+                        WS_VISIBLE
+    END
+END

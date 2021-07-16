@@ -1,0 +1,209 @@
+#define _COMMON_CWINDOW_H_
+#include "common.h"
+
+#include "wargame.h"
+#include "map.hpp"
+
+PPROCESSHEADER(CMapDlg)
+{
+	STARTPROCESSING()
+		PONINITDLG()
+      PONCHAR()
+
+		STARTCMDPROCESSING()
+			PONCMDPUSHBUTTON()
+		ENDCMDPROCESSING()
+
+		STARTCONTROLPROCESSING()
+
+			INCLUDEIDPROCESSING(CID_RIVER)
+			STARTCONTROLIDPROCESSING()
+				PONBUTTONCLICKED()
+			ENDCONTROLIDPROCESSING()
+
+			INCLUDEIDPROCESSING(SLID_LIGHT_FOREST)
+			INCLUDEIDPROCESSING(SLID_DENSE_FOREST)
+			INCLUDEIDPROCESSING(SLID_SAND)
+			INCLUDEIDPROCESSING(SLID_SWAMP)
+			INCLUDEIDPROCESSING(SLID_VILLAGES)
+			INCLUDEIDPROCESSING(SLID_BRIDGES)
+			INCLUDEIDPROCESSING(SLID_XSIZE)
+			INCLUDEIDPROCESSING(SLID_YSIZE)
+			STARTCONTROLIDPROCESSING()
+				PONSLIDERCHANGE()
+			ENDCONTROLIDPROCESSING()
+
+		ENDCONTROLPROCESSING()
+	ENDPROCESSING()
+}
+
+BOOL CMapDlg::OnChar(MRESULT &, USHORT flags, UCHAR, UCHAR, USHORT, USHORT Virtual)
+{
+	if (flags & KC_KEYUP)
+		return FALSE;
+
+	if (Virtual == VK_ESC)
+	{
+		DismissDlg(FALSE);
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
+BOOL CMapDlg::OnInitDlg(MRESULT &, CWindow, PVOID)
+{
+	GetChild(m_SLightForest, SLID_LIGHT_FOREST);
+	GetChild(m_SDenseForest, SLID_DENSE_FOREST);
+	GetChild(m_SSand, SLID_SAND);
+	GetChild(m_SSwamp, SLID_SWAMP);
+	GetChild(m_SVillages, SLID_VILLAGES);
+	GetChild(m_SBridges, SLID_BRIDGES);
+	GetChild(m_TBridges, TID_BRIDGES);
+	GetChild(m_SXSize, SLID_XSIZE);
+	GetChild(m_SYSize, SLID_YSIZE);
+	GetChild(m_CRiver, CID_RIVER);
+	GetChild(m_BOkay, BID_OKAY);
+	GetChild(m_BCancel, BID_CANCEL);
+	GetChild(m_BHelp, BID_HELP);
+
+	UpdateAll();
+	return FALSE;
+}
+
+BOOL CMapDlg::OnSliderChange(MRESULT &, USHORT Which, ULONG)
+{
+	switch(Which)
+	{
+		case SLID_LIGHT_FOREST:
+							m_LightForest = m_SLightForest.GetArmPosition();
+							return TRUE;
+		case SLID_DENSE_FOREST:
+							m_DenseForest = m_SDenseForest.GetArmPosition();
+							return TRUE;
+		case SLID_SAND:
+							m_Sand = m_SSand.GetArmPosition();
+							return TRUE;
+		case SLID_SWAMP:
+							m_Swamp = m_SSwamp.GetArmPosition();
+							return TRUE;
+		case SLID_VILLAGES:
+							m_Villages = m_SVillages.GetArmPosition();
+							return TRUE;
+		case SLID_BRIDGES:
+							m_Bridges = m_SBridges.GetArmPosition();
+							return TRUE;
+		case SLID_XSIZE:
+							m_XSize = m_SXSize.GetArmPosition();
+							return TRUE;
+		case SLID_YSIZE:
+							m_YSize = m_SYSize.GetArmPosition();
+							return TRUE;
+	}
+
+	return FALSE;
+}
+
+BOOL CMapDlg::OnButtonClicked(MRESULT &, USHORT Which)
+{
+	switch(Which)
+	{
+		case CID_RIVER:
+							m_River = (BOOL)m_CRiver.GetCheck();
+							if (m_River)
+							{
+								m_TBridges.Show(NULL);
+								m_SBridges.Show(NULL);
+							}
+							else
+							{
+								m_SBridges.Hide(NULL);
+								m_TBridges.Hide(NULL);
+							}
+							return TRUE;
+	}
+	return FALSE;
+}
+
+BOOL CMapDlg::OnCmdPushButton(MRESULT &, USHORT Which, BOOL)
+{
+	switch(Which)
+	{
+		case BID_OKAY:
+							DismissDlg(TRUE);
+							return TRUE;
+		case BID_CANCEL:
+							DismissDlg(FALSE);
+							return TRUE;
+	}
+	return FALSE;
+}
+
+CMapDlg::CMapDlg()
+{
+	m_LightForest = 75;
+	m_DenseForest = 25;
+	m_Sand = 15;
+	m_Swamp = 30;
+	m_Villages = 20;
+	m_Bridges = 70;
+	m_XSize = 10;
+	m_YSize = 10;
+
+	m_River = TRUE;
+}
+
+void CMapDlg::Set(USHORT LightForest, USHORT DenseForest, USHORT Sand, USHORT Swamp, USHORT Villages, USHORT Bridges,
+						USHORT XSize, USHORT YSize, BOOL River)
+{
+	m_LightForest = LightForest;
+	m_DenseForest = DenseForest;
+	m_Sand = Sand;
+	m_Swamp = Swamp;
+	m_Villages = Villages;
+	m_Bridges = Bridges;
+	m_XSize = XSize;
+	m_YSize = YSize;
+
+	m_River = River;
+}
+
+void CMapDlg::Get(USHORT &LightForest, USHORT &DenseForest, USHORT &Sand, USHORT &Swamp, USHORT &Villages, USHORT &Bridges,
+						USHORT &XSize, USHORT &YSize, BOOL &River)
+{
+	LightForest = m_LightForest;
+	DenseForest = m_DenseForest;
+	Sand = m_Sand;
+	Swamp = m_Swamp;
+	Villages = m_Villages;
+	Bridges = m_Bridges;
+	XSize = m_XSize;
+	YSize = m_YSize;
+
+	River = m_River;
+}
+
+void CMapDlg::UpdateAll()
+{
+	m_SLightForest.SetArmPosition(m_LightForest);
+	m_SDenseForest.SetArmPosition(m_DenseForest);
+	m_SSand.SetArmPosition(m_Sand);
+	m_SSwamp.SetArmPosition(m_Swamp);
+	m_SVillages.SetArmPosition(m_Villages);
+	m_SXSize.SetArmPosition(m_XSize);
+	m_SYSize.SetArmPosition(m_YSize);
+	if (m_River)
+	{
+		m_CRiver.SetCheck(1);
+		m_SBridges.SetArmPosition(m_Bridges);
+		m_TBridges.Show(NULL);
+		m_SBridges.Show(NULL);
+	}
+	else
+	{
+		m_CRiver.SetCheck(0);
+		m_SBridges.Hide(NULL);
+		m_TBridges.Hide(NULL);
+	}
+}
+

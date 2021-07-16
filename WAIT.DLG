@@ -1,0 +1,11 @@
+DLGINCLUDE DID_PLEASE_WAIT_MAP "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_PLEASE_WAIT_MAP LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM WOV - Map Generation", DID_PLEASE_WAIT_MAP, 70, 80, 180, 30, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        CTEXT           "Generating Map - Please wait...", -1, 1, 0, 179, 30, 
+                        DT_VCENTER
+    END
+END

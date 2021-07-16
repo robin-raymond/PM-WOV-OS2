@@ -1,0 +1,20 @@
+DLGINCLUDE DID_CONGRAT "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_CONGRAT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM WOV - Hall of Fame", DID_CONGRAT, 90, 60, 225, 64, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Congradulations!", -1, 5, 50, 70, 8
+        LTEXT           "You are now part of the Hall of Fame.", -1, 5, 35, 
+                        165, 8
+        LTEXT           "What are your initials?", -1, 5, 5, 95, 10, 
+                        DT_VCENTER
+        ENTRYFIELD      "BIG", FID_INITIALS, 107, 7, 26, 8, NOT 
+                        ES_AUTOSCROLL | ES_MARGIN
+        DEFPUSHBUTTON   "~Okay", BID_OKAY, 180, 45, 40, 15
+        PUSHBUTTON      "~Help", BID_HELP, 180, 5, 40, 15, BS_HELP
+        LTEXT           "-Player 1-", TID_PLAYER_1, 80, 50, 70, 8
+        LTEXT           "-Player 2-", TID_PLAYER_2, 80, 50, 70, 8
+    END
+END

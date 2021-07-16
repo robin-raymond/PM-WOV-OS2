@@ -1,0 +1,14 @@
+DLGINCLUDE DID_ABANDON_GAME "M:\WARGAME\WARGAME.H"
+
+DLGTEMPLATE DID_ABANDON_GAME LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM WOV - Abandon Game", DID_ABANDON_GAME, 50, 70, 250, 45, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Game in progress!", -1, 15, 25, 160, 10
+        LTEXT           "Do you want to abandon your game?", -1, 15, 10, 160, 
+                        10, NOT WS_GROUP
+        DEFPUSHBUTTON   "~No", BID_CANCEL, 200, 5, 45, 15, WS_GROUP
+        PUSHBUTTON      "~Yes", BID_OKAY, 200, 25, 45, 15
+    END
+END

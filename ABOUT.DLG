@@ -1,0 +1,16 @@
+DLGINCLUDE DID_ABOUT "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_ABOUT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM WOV - About", DID_ABOUT, 50, 20, 175, 104, WS_VISIBLE, 
+            FCF_TITLEBAR
+    BEGIN
+        ICON            ID_RESOURCE, ID_RESOURCE, 75, 45, 20, 16, WS_GROUP
+        CTEXT           "PM War Over Villages v1.0a  (c)1996", -1, 5, 80, 
+                        165, 13, DT_VCENTER | NOT WS_GROUP
+        CTEXT           "by Robin Raymond", -1, 5, 65, 165, 13, DT_VCENTER | 
+                        NOT WS_GROUP
+        DEFPUSHBUTTON   "~Okay", BID_OKAY, 5, 5, 80, 25, WS_GROUP
+        PUSHBUTTON      "~Registration", BID_REGISTRATION, 90, 5, 80, 25
+    END
+END

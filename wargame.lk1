@@ -1,0 +1,3 @@
+NAME wargame
+FIL citem.obj,coblist.obj,cwindow.obj,memory.obj,nfile.obj,platform.obj,abandon.obj,about.obj,board.obj,control.obj,gameover.obj,hiscore.obj,main.obj,map.obj,players.obj,register.obj,regme.obj,resource.obj,sorry.obj,thankyou.obj
+

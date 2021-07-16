@@ -1,0 +1,44 @@
+#define _COMMON_CWINDOW_H_
+#include "common.h"
+
+#include "abandon.hpp"
+#include "wargame.h"
+
+PPROCESSHEADER(CAbandonDlg)
+{
+	STARTPROCESSING()
+
+		PONCHAR()
+
+		STARTCMDPROCESSING()
+			PONCMDPUSHBUTTON()
+		ENDCMDPROCESSING()
+	ENDPROCESSING()
+}
+
+BOOL CAbandonDlg::OnChar(MRESULT &, USHORT flags, UCHAR, UCHAR, USHORT, USHORT Virtual)
+{
+	if (flags & KC_KEYUP)
+		return FALSE;
+
+	if (Virtual == VK_ESC)
+		return TRUE;
+
+	return FALSE;
+}
+
+
+BOOL CAbandonDlg::OnCmdPushButton(MRESULT &, USHORT Which, BOOL)
+{
+	switch(Which)
+	{
+		case BID_OKAY:
+							DismissDlg(TRUE);
+							return TRUE;
+		case BID_CANCEL:
+							DismissDlg(FALSE);
+							return TRUE;
+	}
+	return FALSE;
+}
+

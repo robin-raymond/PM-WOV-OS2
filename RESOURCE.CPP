@@ -1,0 +1,149 @@
+#define _COMMON_CWINDOW_H_
+#define _COMMON_COBLIST_H_
+#include "common.h"
+
+#include "wargame.h"
+#include "board.hpp"
+#include "resource.hpp"
+/*
+#include <stdio.h>
+
+PQUICKPROCESSHEADER(CDisplayNumberWindow)
+{
+	STARTPROCESSING()
+		PONPAINT()
+	ENDPROCESSING()
+}
+
+void CDisplayNumberWindow::Update()
+{
+	LONG Number = m_Number;
+
+	sprintf(m_Text, "%ld", Number);
+
+	LONG x1, y1, x2, y2;
+
+	GetWindowRect(x1, y1, x2, y2);
+	InvalidateRect(x1, y1, x2, y2, FALSE);
+}
+
+BOOL CDisplayNumberWindow::OnPaint(MRESULT &)
+{
+	RECTL rect;
+
+	GetWindowRect(rect);
+
+	HPS hps;
+
+	hps = BeginPaint(NULLHANDLE, NULL);
+
+	WinDrawText(hps, -1, m_Text, &rect, CLR_NEUTRAL, CLR_BACKGROUND,
+					DT_CENTER | DT_VCENTER | DT_ERASERECT);
+
+	EndPaint(hps);
+
+	return TRUE;
+}*/
+
+
+
+PPROCESSHEADER(CResourceDlg)
+{
+	STARTPROCESSING()
+		PONINITDLG()
+		PONCHAR()
+
+		STARTCMDPROCESSING()
+			PONCMDPUSHBUTTON()
+		ENDCMDPROCESSING()
+
+	ENDPROCESSING()
+}
+
+BOOL CResourceDlg::OnChar(MRESULT &, USHORT flags, UCHAR, UCHAR, USHORT, USHORT Virtual)
+{
+	if (flags & KC_KEYUP)
+		return FALSE;
+
+	if (Virtual == VK_ESC)
+	{
+		DismissDlg(FALSE);
+		return TRUE;
+	}
+
+	return FALSE;
+}
+
+BOOL CResourceDlg::OnInitDlg(MRESULT &, CWindow, PVOID)
+{
+	GetChild(m_GroundForces, SLID_GROUND_FORCES);
+	GetChild(m_Tank, SLID_TANK);
+	GetChild(m_FastTank, SLID_FAST_TANK);
+	GetChild(m_BomberPlane, SLID_BOMBER_PLANE);
+	GetChild(m_FighterPlane, SLID_FIGHTER_PLANE);
+	GetChild(m_Missile, SLID_LONG_RANGE_MISSILE);
+	GetChild(m_SandBuggy, SLID_SAND_BUGGY);
+	GetChild(m_WaterForces, SLID_SEMI_WATER_FORCES);  // HERE WEAPONS
+	GetChild(m_RescueRepair, SLID_RESCUE_REPAIR);
+
+//	GetChild(m_DTotal, UID_TOTAL_RESOURCES);
+
+	GetChild(m_Okay, BID_NEXT);
+	GetChild(m_Cancel, BID_PREVIOUS);
+	GetChild(m_Help, BID_NEXT);
+
+//	m_DTotal.Setup();
+
+	Set();
+
+	return TRUE;
+}
+
+void CResourceDlg::Set()
+{
+	USHORT BTotal = m_Build->GetTotal();
+
+	m_GroundForces.SetArmPosition(m_Build->GetPerGroundForces());
+	m_Tank.SetArmPosition(m_Build->GetPerTank());
+	m_FastTank.SetArmPosition(m_Build->GetPerFastTank());
+	m_BomberPlane.SetArmPosition(m_Build->GetPerBomberPlane());
+	m_FighterPlane.SetArmPosition(m_Build->GetPerFighterPlane());
+	m_Missile.SetArmPosition(m_Build->GetPerMissile());
+	m_SandBuggy.SetArmPosition(m_Build->GetPerSandBuggy());
+	m_WaterForces.SetArmPosition(m_Build->GetPerWaterForces());
+	m_RescueRepair.SetArmPosition(m_Build->GetPerRescueRepair()); // HERE WEAPONS
+
+//	m_DTotal.Set(BTotal);
+}
+
+void CResourceDlg::Get()
+{
+	m_Build->SetPerGroundForces(m_GroundForces.GetArmPosition());
+	m_Build->SetPerTank(m_Tank.GetArmPosition());
+	m_Build->SetPerFastTank(m_FastTank.GetArmPosition());
+	m_Build->SetPerBomberPlane(m_BomberPlane.GetArmPosition());
+	m_Build->SetPerFighterPlane(m_FighterPlane.GetArmPosition());
+	m_Build->SetPerMissile(m_Missile.GetArmPosition());
+	m_Build->SetPerSandBuggy(m_SandBuggy.GetArmPosition());
+	m_Build->SetPerWaterForces(m_WaterForces.GetArmPosition());
+	m_Build->SetPerRescueRepair(m_RescueRepair.GetArmPosition());
+	m_Build->Rebalance();
+}
+
+BOOL CResourceDlg::OnCmdPushButton(MRESULT &, USHORT Which, BOOL)
+{
+	switch(Which)
+	{
+		case BID_OKAY:
+							Get();
+							DismissDlg(TRUE);
+							return TRUE;
+		case BID_CANCEL:
+							DismissDlg(FALSE);
+							return TRUE;
+		case BID_HELP:
+							return TRUE;
+	}
+	return FALSE;
+}
+

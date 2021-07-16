@@ -1,0 +1,10 @@
+Archive name: pmwov10a.zip
+Program name: PM War Over Villages
+Full Description: PM War Over Villages v1.0a - PM war game
+Compressor: zip 2.0.1 for OS/2
+Compressor options: -r -u -9 pmwov10a.zip *
+Platform: OS/2 Warp (not been tested under 2.1)
+Application: 32bit Presentation Manager Application
+Author: Robin Raymond (av398@freenet.carleton.ca)
+Archiver: Robin Raymond
+Suggested placement: /os2/games

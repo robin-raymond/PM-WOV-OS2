@@ -1,0 +1,16 @@
+DLGINCLUDE DID_THANK_YOU "M:\WARGAME\WARGAME.H"
+
+DLGTEMPLATE DID_THANK_YOU LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM WOV - Thank you!", DID_THANK_YOU, 70, 60, 260, 54, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        PUSHBUTTON      "Thank Y~ou", BID_OKAY, 195, 30, 60, 20
+        LTEXT           "Thank you for your support! Needless to say, your m"
+                        "oney will be put to use creating new exciting OS/2 "
+                        "games. This game is just a simple taste compaired t"
+                        "o what is coming! I hope you continue to enjoy PM W"
+                        "OV...", -32433, 5, 5, 185, 43, DT_WORDBREAK
+        ICON            ID_RESOURCE, ID_RESOURCE, 215, 10, 20, 16, WS_GROUP
+    END
+END

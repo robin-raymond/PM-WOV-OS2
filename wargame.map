@@ -1,0 +1,952 @@
+WATCOM Linker Version 10.5
+Copyright by WATCOM International Corp. 1985, 1995. All rights reserved.
+Created on:       96/08/15 00:59:22
+Executable Image: wargame.exe
+creating an OS/2 32-bit executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          0002:00000000        00011fc0
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+BEGTEXT                CODE                          0001:00000000   00000007
+_TEXT                  CODE                          0001:00000010   00015a20
+_NULL                  BEGDATA        DGROUP         0002:00000000   00000004
+_AFTERNULL             BEGDATA        DGROUP         0002:00000004   00000000
+CONST                  DATA           DGROUP         0002:00000004   00000470
+CONST2                 DATA           DGROUP         0002:00000474   00000290
+_DATA                  DATA           DGROUP         0002:00000704   00001412
+XIB                    DATA           DGROUP         0002:00001b16   00000000
+XI                     DATA           DGROUP         0002:00001b16   0000001e
+XIE                    DATA           DGROUP         0002:00001b34   00000000
+TIB                    DATA           DGROUP         0002:00001b34   00000000
+TI                     DATA           DGROUP         0002:00001b34   00000000
+TIE                    DATA           DGROUP         0002:00001b34   00000000
+YIB                    DATA           DGROUP         0002:00001b34   00000000
+YI                     DATA           DGROUP         0002:00001b34   00000006
+YIE                    DATA           DGROUP         0002:00001b3a   00000000
+DATA                   DATA           DGROUP         0002:00001b3a   00000000
+_BSS                   BSS            DGROUP         0002:00001b3c   00000480
+STACK                  STACK          DGROUP         0002:00001fc0   00010000
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: citem.obj(M:\common\citem.cpp)
+0001:000000a0  long unsigned near CPointer::ObjectType1()
+0001:00000090  long unsigned near CPointer::ObjectType2()
+0001:00000050  long unsigned near CPointer::Identical( CItem near * const )
+0001:00000010  CItem near * near CPointer::New()
+0001:00000028  void near CPointer::Delete()
+0001:00000030* CPointer near & near CPointer::operator =( CPointer const near & )
+0001:00000030  void near CPointer::CopyItem( CItem near * const )
+0001:00000038* long unsigned near CPointer::operator ==( CPointer const near & )
+0001:00000038  long unsigned near CPointer::MatchItem( CItem near * const )
+Module: coblist.obj(M:\common\coblist.cpp)
+0001:000009e0  long unsigned near CObList::ObjectType1()
+0001:000009d0  long unsigned near CObList::ObjectType2()
+0001:00000990  long unsigned near CObList::Identical( CItem near * const )
+0001:00000980  long unsigned near CObList::operator !=( CList const near & )
+0001:00000940  near CObList::~CObList()
+0001:000000b0  near CObList::CObList()
+0001:000000cc  CItem near * near CObList::New()
+0001:000000dc  void near CObList::Delete()
+0001:000000f4  void near CObList::CopyItem( CItem near * const )
+0001:00000118  long unsigned near CObList::MatchItem( CItem near * const )
+0001:00000120  CList near & near CObList::operator =( CList const near & )
+0001:00000170  long unsigned near CObList::operator ==( CList const near & )
+0001:00000208  CItem near * near CObList::GetHead()
+0001:00000218  CItem near * near CObList::GetTail()
+0001:00000228  void near CObList::RemoveHead()
+0001:00000278  void near CObList::RemoveTail()
+0001:000002c8  RR_POSITION near * near CObList::AddHead( CItem near * )
+0001:00000358  RR_POSITION near * near CObList::AddTail( CItem near * )
+0001:000003e8  void near CObList::AddHead( CList near & )
+0001:0000043c  void near CObList::AddTail( CList near & )
+0001:00000480  void near CObList::RemoveAll()
+0001:000004b4  RR_POSITION near * near CObList::GetHeadPosition()
+0001:000004c4  RR_POSITION near * near CObList::GetTailPosition()
+0001:000004d4  CItem near * near CObList::GetHeadPosition( RR_POSITION near * near & )
+0001:000004f4  CItem near * near CObList::GetTailPosition( RR_POSITION near * near & )
+0001:00000514  CItem near * near CObList::GetNext( RR_POSITION near * near & )
+0001:0000052c  CItem near * near CObList::GetPrevious( RR_POSITION near * near & )
+0001:00000544  CItem near * near CObList::GetAt( RR_POSITION near * )
+0001:00000550  CItem near * near CObList::SetAt( RR_POSITION near *, CItem near * )
+0001:00000580  void near CObList::RemoveAt( RR_POSITION near * )
+0001:000005f0  RR_POSITION near * near CObList::InsertBefore( RR_POSITION near *, CItem near * )
+0001:00000710  RR_POSITION near * near CObList::InsertAfter( RR_POSITION near *, CItem near * )
+0001:00000824  RR_POSITION near * near CObList::MatchForward( CItem near * )
+0001:00000834  RR_POSITION near * near CObList::MatchBackward( CItem near * )
+0001:00000844  RR_POSITION near * near CObList::MatchForward( CItem near *, RR_POSITION near * )
+0001:00000870  RR_POSITION near * near CObList::MatchBackward( CItem near *, RR_POSITION near * )
+0001:0000089c  RR_POSITION near * near CObList::FindForward( CItem near * )
+0001:000008ac  RR_POSITION near * near CObList::FindBackward( CItem near * )
+0001:000008bc  RR_POSITION near * near CObList::FindForward( CItem near *, RR_POSITION near * )
+0001:000008d8  RR_POSITION near * near CObList::FindBackward( CItem near *, RR_POSITION near * )
+0001:000008f8  RR_POSITION near * near CObList::FindIndex( long unsigned )
+0001:00000924  long unsigned near CObList::GetCount()
+0001:00000928  long unsigned near CObList::IsEmpty()
+Module: cwindow.obj(M:\common\cwindow.cpp)
+0001:000009f0* void near CSpinWindow::Update()
+0001:00000a14* long unsigned near CSpinWindow::SetLimit( long, long )
+0001:00000a28* long unsigned near CSpinWindow::GetValue( long near & )
+0001:00000a40  short unsigned near CButtonWindow::GetCheck()
+0001:00000a58* void near CButtonWindow::ClickButton( long unsigned )
+0001:00000a70  short unsigned near CButtonWindow::SetCheck( short unsigned )
+0001:00000a88* long unsigned near CButtonWindow::SetDefaultState( long unsigned )
+0001:00000aa0* long unsigned near CButtonWindow::SetHilite( long unsigned )
+0001:00000ab8* long unsigned near CButtonWindow::IsHilite()
+0001:00000ad0* short near CRadioButtonWindow::GetCheckIndex()
+0001:00000ae8* void near CScrollBarWindow::GetRange( short near &, short near & )
+0001:00000b0c  long unsigned near CScrollBarWindow::SetThumbSize( short, short )
+0001:00000b2c  long unsigned near CScrollBarWindow::SetScrollBar( short, short, short )
+0001:00000b4c  long unsigned near CScrollBarWindow::SetPosition( short )
+0001:00000b64  short unsigned near CSliderWindow::GetArmPosition()
+0001:00000b80  long unsigned near CSliderWindow::SetArmPosition( short unsigned )
+0001:00000b9c  void near CMenuWindow::LoadMenu( CWindow, long unsigned, long unsigned )
+0001:00000bb0  long unsigned near CMenuWindow::PopupMenu( CWindow, CWindow, long, long, long unsigned, short unsigned )
+0001:00000be0  long unsigned near CMenuWindow::SetEnabled( long unsigned, long unsigned )
+0001:00000c04  long unsigned near CMenuWindow::SetDisabled( long unsigned, long unsigned )
+0001:00000c28  long unsigned near CDialogBox::Dlg( CWindow, CWindow, long unsigned, long unsigned )
+0001:00000c58  void near CDialogBox::LoadDlg( CWindow, CWindow, long unsigned, long unsigned )
+0001:00000c90* void near CDialogBox::CreateDlg( CWindow, CWindow, _DLGTEMPLATE near * )
+0001:00000cc0* long unsigned near CDialogBox::ProcessDlg()
+0001:00000cd0  long unsigned near CDialogBox::DismissDlg( long unsigned )
+0001:00000ce0  long unsigned near CWindow::GetWindowText( char near *, long unsigned )
+0001:00000cf0  void near CWindow::SetWindowText( char near * )
+0001:00000d18  void near CWindow::GetWindowRect( long near &, long near &, long near &, long near & )
+0001:00000d70  void near CWindow::InvalidateRect( long, long, long, long, long unsigned )
+0001:00000d9c  void near CWindow::MapPointsToWindow( CWindow, long near &, long near & )
+0001:00000dd4* void near CWindow::SetEnable( long unsigned )
+0001:00000dec* long unsigned near CWindow::GetWindowParams( _WNDPARAMS near * )
+0001:00000e00* long unsigned near CWindow::SetWindowParams( _WNDPARAMS near * )
+0001:00000e14* long unsigned near CWindow::IsMatchMnemonic( short unsigned )
+0001:00000e2c* short unsigned near CWindow::GetConvertPos( _RECTL near * )
+0001:00000e44* void near CWindow::CreateWindow( CWindow, char near *, long unsigned, short, short, short, short, CWindow, CWindow, short unsigned, void near * )
+0001:00000e9c* void near ToHex( char near *, char unsigned )
+0001:00000ed8* long unsigned near ToBin( char unsigned near * )
+0001:00000ef4  CWindow near CWindow::CreateStdWindow( CWindow, long unsigned, long unsigned near *, char near *, long unsigned, long unsigned, short unsigned )
+0001:00001030  long unsigned near CWindow::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:00001038  long unsigned near CWindow::Associate( CHelpInstanceWindow )
+0001:0000106c  CHelpInstanceWindow near CWindow::GetHelpInstance()
+0001:000010a8  long unsigned near CHelpInstanceWindow::Create( long unsigned, char near *, short unsigned, long unsigned, long unsigned, long unsigned, long unsigned, char near *, long unsigned, char near * )
+0001:00001128  long unsigned near CHelpInstanceWindow::Destroy()
+0001:00001154  long unsigned near CHelpInstanceWindow::ShowContents()
+0001:00001190* long unsigned near CHelpInstanceWindow::ShowIndex()
+0001:000011cc  void near CHelpInstanceWindow::ShowGeneral()
+0001:000011fc  void near CHelpInstanceWindow::ShowUsing()
+0001:0000122c  void near CHelpInstanceWindow::ShowKeys()
+0001:0000125c  long unsigned near CHelpInstanceWindow::ShowPanel( short unsigned )
+0001:00001298+ void near * near DoWndProc( long unsigned, long unsigned, void near *, void near * )
+0001:0000130c+ void near * near DoCreateWndProc( long unsigned, long unsigned, void near *, void near * )
+0001:000013c8+ void near * near DoClientWndProc( long unsigned, long unsigned, void near *, void near * )
+0001:00001570+ void near * near DoDialogWndProc( long unsigned, long unsigned, void near *, void near * )
+0001:0000161c  void near InitializeWindows( long unsigned near &, long unsigned near & )
+0001:00001640  long unsigned near TerminateWindows( long unsigned near &, long unsigned near & )
+0001:0000165c  void near RegisterClass( long unsigned, long unsigned, long unsigned, long unsigned )
+0002:00000704+ char near MY_WC_pszCWindow[]
+0002:0000070c+ char near MY_WC_pszCCreateWindow[]
+0002:0000071c+ char near MY_WC_pszCClientWindow[]
+Module: memory.obj(M:\common\memory.cpp)
+0001:000016b0  char unsigned near * near ResetPointer( char unsigned near * near & )
+0001:000016bc  char unsigned near * near ResetBlock( char unsigned near *, long unsigned )
+0001:000016d4  void near Alloc( char unsigned near * near &, long unsigned )
+0001:000016f4  void near Free( char unsigned near * near & )
+Module: nfile.obj(M:\common\nfile.cpp)
+0001:00001710  long unsigned near NFile::Open( char near *, long unsigned )
+0001:00001730  long unsigned near NFile::OpenBlocking( char near *, long unsigned )
+0001:00001760  long unsigned near NFile::Close()
+0001:0000178c* long unsigned near NFile::SeekStart( long )
+0001:000017b4* long unsigned near NFile::SeekCurrent( long )
+0001:000017dc* long unsigned near NFile::SeekEnd( long )
+0001:00001804* long unsigned near NFile::Rewind()
+0001:00001830* long unsigned near NFile::Append()
+0001:0000185c* long unsigned near NFile::Read( void near *, long unsigned )
+0001:0000188c* long unsigned near NFile::Write( void near *, long unsigned )
+0001:000018bc* NFile near & near NFile::operator <<( char unsigned )
+0001:000018f8* NFile near & near NFile::operator <<( short unsigned )
+0001:00001934  NFile near & near NFile::operator <<( long unsigned )
+0001:00001970  NFile near & near NFile::operator <<( char )
+0001:000019ac* NFile near & near NFile::operator <<( short )
+0001:000019e8  NFile near & near NFile::operator <<( long )
+0001:00001a24* NFile near & near NFile::operator <<( char near * )
+0001:00001a8c* NFile near & near NFile::operator >>( char unsigned near & )
+0001:00001ac0* NFile near & near NFile::operator >>( short unsigned near & )
+0001:00001af4  NFile near & near NFile::operator >>( long unsigned near & )
+0001:00001b28  NFile near & near NFile::operator >>( char near & )
+0001:00001b5c* NFile near & near NFile::operator >>( short near & )
+0001:00001b90  NFile near & near NFile::operator >>( long near & )
+0001:00001bc4* NFile near & near NFile::operator >>( char near * )
+0001:00001c10* NFile near & near NFile::Read( char near *, long unsigned )
+0001:00001c98* long unsigned near NFile::GetLastError()
+0001:00001c9c* void near NFile::SetLastError( long unsigned )
+0001:00001ca8* void near NFile::ResetLastError()
+0001:00001cb0* long unsigned near NFile::GetLastActualError()
+Module: platform.obj(M:\common\platform.cpp)
+0001:00001cc0  long unsigned near NFileOpen( char near *, void near * near &, long unsigned )
+0001:00001ec4  long unsigned near NFileClose( void near * )
+0001:00001f08  long unsigned near NFileRead( void near *, void near *, long unsigned, long unsigned near & )
+0001:00001f6c  long unsigned near NFileWrite( void near *, void near *, long unsigned, long unsigned near & )
+0001:00001fdc* long unsigned near NFileSeek( void near *, long, long unsigned )
+0001:0000204c  long unsigned near NFileSeekStart( void near *, long )
+0001:000020b0  long unsigned near NFileSeekCurrent( void near *, long )
+0001:00002114  long unsigned near NFileSeekEnd( void near *, long )
+Module: abandon.obj(M:\wargame\abandon.cpp)
+0001:00002180  long unsigned near CAbandonDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:000021f4  long unsigned near CAbandonDlg::OnChar( void near * near &, short unsigned, char unsigned, char unsigned, short unsigned, short unsigned )
+0001:00002230  long unsigned near CAbandonDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+Module: about.obj(M:\wargame\about.cpp)
+0001:00002250  long unsigned near CAboutDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:000022c4  long unsigned near CAboutDlg::OnChar( void near * near &, short unsigned, char unsigned, char unsigned, short unsigned, short unsigned )
+0001:000022e0  long unsigned near CAboutDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+Module: board.obj(M:\wargame\board.cpp)
+0001:00008410+ short near CFighter::GetXPos()
+0001:00008400+ short near CFighter::GetYPos()
+0001:000023a0  void near LoadBitmaps( long unsigned )
+0001:000023dc  void near DeleteBitmaps()
+0001:00002404* void near DisplayBitmap( long unsigned, long unsigned, long, long )
+0001:00002430  void near DisplayStretchBitmap( long unsigned, long unsigned, _RECTL near & )
+0001:00002450  short unsigned near GetStrongest()
+0001:00002458* void near SetStrongest( short unsigned )
+0001:00002460+ near CFighter::CFighter()
+0001:000024e4+ long unsigned near CFighter::SmartDecide( CBoard near & )
+0001:00002694+ long unsigned near CFighter::SmartFindDecide( CBoard near & )
+0001:00002724+ void near CFighter::Fight( CFighter near & )
+0001:000027c8* long unsigned near CFighter::CheckMove( short unsigned )
+0001:000027f0* long unsigned near CFighter::Still()
+0001:00002818  void near CFighter::UpdateLink()
+0001:00002838* near CPart::CPart()
+0001:00002884* void near CPart::SetValues( long unsigned, long unsigned, long unsigned, long unsigned, long unsigned, long unsigned )
+0001:000028b0* long unsigned near CPart::IsOpenField()
+0001:000028ec* void near CPart::SetBridge()
+0001:000028fc* void near CPart::SetControl( short unsigned )
+0001:00002908* void near CPart::SetPalette( short unsigned )
+0001:00002910+ long unsigned near CPart::SandPiece( long unsigned, long unsigned, long unsigned, long unsigned, long unsigned, long unsigned, long unsigned, long unsigned )
+0001:00002e68+ long unsigned near CPart::RiverPiece( long unsigned, long unsigned, long unsigned, long unsigned, long unsigned )
+0001:00002fc8+ void near CPart::ChoosePiece( CBoard near &, short, short )
+0001:00003610  void near CBoard::DisplayActionPiece( long unsigned, long, long, long unsigned )
+0001:00003644  void near CBoard::DisplayPiece( short, short, long unsigned, long, long )
+0001:000037d0  near CBoard::CBoard()
+0001:00003984  void near CBoard::SizeBoard( short, short )
+0001:00003a98  void near CBoard::FreeBoard()
+0001:00003bd0  void near CBoard::DefinePieces()
+0001:00003c5c* void near CBoard::ClearAllTraces()
+0001:00003ca0  CPart near & near CBoard::GetPart( short, short )
+0001:00003cd4* CPart near & near CBoard::GetRiverPart( short, short )
+0001:00003d08* CPart near & near CBoard::GetSandPart( short, short )
+0001:00003d3c+ void near CBoard::SetLightForest( short, short, short unsigned )
+0001:00003ed8* void near CBoard::SetLightForest( short unsigned, short unsigned )
+0001:00003f34+ void near CBoard::SetDenseForest( short, short, short unsigned )
+0001:000040d0* void near CBoard::SetDenseForest( short unsigned, short unsigned )
+0001:0000412c+ void near CBoard::SetSand( short, short, short unsigned )
+0001:000042c8* void near CBoard::SetSand( short unsigned, short unsigned )
+0001:00004324+ void near CBoard::SetSwamp( short, short, short unsigned )
+0001:000044c0* void near CBoard::SetSwamp( short unsigned, short unsigned )
+0001:0000451c  void near CBoard::SetRiver( short unsigned )
+0001:00004a7c  void near CBoard::GenerateMap( short unsigned, short unsigned, short unsigned, short unsigned, short unsigned )
+0001:00004c54  void near CBoard::AddVillages( short unsigned )
+0001:00004e34+ long unsigned near CBoard::FindGoodLocation( short near &, short near &, CFighter near &, CBindMove near & )
+0001:00005080* long unsigned near CBoard::AddFighter( CFighter near &, CBindMove near & )
+0001:000050d4+ void near CBoard::GoAround( short near &, short near &, short, short, long unsigned near &, CFighter near *, CBindMove near & )
+0001:0000531c  void near CBoard::Choose( short unsigned )
+0001:00005740  void near CBoard::Move( short unsigned, CBindMove near & )
+0001:0000705c  CFighter near * near CBoard::FindNext( short unsigned, CFighter near * )
+0001:000070fc  short unsigned near GetWhich( long unsigned )
+0001:0000719c+ long unsigned near GetWhich( long unsigned, short unsigned )
+0001:0000724c  void near CBuild::ResetWeapons()
+0001:000072a0* short unsigned near CBuild::MakeTotal( short unsigned )
+0001:0000731c+ long unsigned near CBuild::GetNextBuild()
+0001:00007830  void near CBuild::SetTotal( short unsigned )
+0001:000079ec  near CBuild::~CBuild()
+0001:00007a08* void near CBuild::SetBuild( short unsigned, long unsigned )
+0001:00007ae0* void near CBuild::SetBuild( short unsigned, long unsigned, short unsigned )
+0001:00007c50* long unsigned near CBuild::GetResource( short unsigned )
+0001:00007c68* short unsigned near CBuild::GetTotal( long unsigned )
+0001:00007dec  void near CBuild::Rebalance()
+0001:00007f20  void near CBuild::BuildFighters( CBoard near &, CBindMove near &, long unsigned )
+0002:0000072c+ short unsigned near g_Strongest
+0002:0000072e+ short unsigned near DatX1Dir[][3]
+0002:00000740+ short unsigned near DatY1Dir[][3]
+0002:00000752+ short unsigned near DatX2Dir[][3]
+0002:00000764+ short unsigned near DatY2Dir[][3]
+0002:00000776+ short unsigned near DatFighters[][11]
+0002:00001b3c+ long unsigned near bitmaphandles[]
+0002:00001cf4+ long near g_rec
+Module: control.obj(M:\wargame\control.cpp)
+0001:00008420+ long unsigned near CDisplayPieceWindow::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:0000843c+ long unsigned near CDisplayPositionWindow::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:00008448* near CDisplayPieceWindow::CDisplayPieceWindow()
+0001:00008464* near CDisplayPositionWindow::CDisplayPositionWindow()
+0001:0000848c* void near CDisplayPieceWindow::Update()
+0001:000084cc+ long unsigned near CDisplayPieceWindow::OnPaint( void near * near & )
+0001:00008510* void near CDisplayPositionWindow::Update()
+0001:00008574+ long unsigned near CDisplayPositionWindow::OnPaint( void near * near & )
+0001:000085cc+ long unsigned near CControlDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:000086d8  near CControlDlg::CControlDlg()
+0001:00008884+ long unsigned near CControlDlg::OnInitDlg( void near * near &, CWindow, void near * )
+0001:00008a68+ long unsigned near CControlDlg::OnChar( void near * near &, short unsigned, char unsigned, char unsigned, short unsigned, short unsigned )
+0001:00008b1c  void near CControlDlg::HideAll()
+0001:00008d04+ long unsigned near CControlDlg::OnButtonClicked( void near * near &, short unsigned )
+0001:00008d10+ long unsigned near CControlDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+0001:00008d90  void near CControlDlg::Set( short, short, long unsigned, short unsigned, short unsigned, long unsigned, long unsigned, short, short, long unsigned, short unsigned, short unsigned, long unsigned, long unsigned )
+Module: gameover.obj(M:\wargame\gameover.cpp)
+0002:0000083c+ char near g_Admiral[]
+0002:00000844+ char near g_SargentMajor[]
+0002:00000854+ char near g_Sargent[]
+0002:0000085c+ char near g_Corporal[]
+0002:00000868+ char near g_PrivateFirst[]
+0002:0000087c+ char near g_PrivateSecond[]
+0002:00000894+ char near g_PrivateThird[]
+0002:000008a8+ char near g_Regular[]
+0001:00009360+ long unsigned near CDisplayGamePieceWindow::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:0000937c+ long unsigned near CDisplayDestroyedWindow::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:00009390+ long unsigned near CDisplayClassWindow::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:0000939c* void near CDisplayGamePieceWindow::Update()
+0001:000093dc+ long unsigned near CDisplayGamePieceWindow::OnPaint( void near * near & )
+0001:00009420* void near CDisplayDestroyedWindow::Update()
+0001:00009478+ long unsigned near CDisplayDestroyedWindow::OnPaint( void near * near & )
+0001:000094d0* void near CDisplayClassWindow::Update()
+0001:00009510+ long unsigned near CDisplayClassWindow::OnPaint( void near * near & )
+0001:00009568+ long unsigned near CAskInitialsDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:000095c4+ long unsigned near CAskInitialsDlg::OnInitDlg( void near * near &, CWindow, void near * )
+0001:00009638* void near CAskInitialsDlg::FillBuffer()
+0001:00009680+ long unsigned near CAskInitialsDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+0001:000096e4+ long unsigned near CHighScoresDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:00009740  near CHighScoresDlg::CHighScoresDlg()
+0001:00009970+ long unsigned near CHighScoresDlg::OnInitDlg( void near * near &, CWindow, void near * )
+0001:0000a21c+ long unsigned near CHighScoresDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+0001:0000a228+ long unsigned near CGameOverDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:0000a284  near CGameOverDlg::CGameOverDlg( long unsigned )
+0001:0000a3d4+ long unsigned near CGameOverDlg::OnInitDlg( void near * near &, CWindow, void near * )
+0001:0000ad80+ long unsigned near CGameOverDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+0001:0000ad94  void near CGameOverDlg::SetP2( short, short, short unsigned, short unsigned, long, long, long unsigned, CWindow )
+0001:0000aec4  void near CGameOverDlg::SetP1( short, short, short unsigned, short unsigned, long, long, long unsigned, CWindow )
+0002:000008bc+ char near g_Default[]
+Module: hiscore.obj(M:\wargame\hiscore.cpp)
+0001:0000b0b0  short unsigned near AddRank( long, char near * )
+0001:0000b0c4  long unsigned near InRank( long )
+0001:0000b168  long near GetPoints( short unsigned )
+0001:0000b174  char near * near GetInitials( short unsigned )
+0001:0000b184* near CHighScore::CHighScore()
+0001:0000b22c* long near CHighScore::GetPoints( short unsigned )
+0001:0000b234* char near * near CHighScore::GetInitials( short unsigned )
+0001:0000b244+ short unsigned near CHighScore::AddRank( long, char near * )
+0001:0000b368* long unsigned near CHighScore::InRank( long )
+0001:0000b408* void near CHighScore::Load()
+0001:0000b484+ void near CHighScore::Save()
+0002:000008c0+ char near * near g_HighFile
+0002:00001cf8+ CHighScore near g_HighScore
+Module: main.obj(M:\wargame\main.cpp)
+0001:00010210+ near CWindow::CWindow()
+0001:00010200+ near CWindow::CWindow( long unsigned )
+0001:000101f0+ void near CWindow::SetHandle( long unsigned )
+0001:000101e0+ long unsigned near CWindow::GetPS()
+0001:000101d0+ void near CWindow::ReleasePS( long unsigned )
+0001:000101b0+ void near CWindow::GetParent( CWindow near & )
+0001:00010190+ void near CWindow::GetChild( CWindow near &, short unsigned )
+0001:00010180+ long unsigned near CPart::HasFighter()
+0001:00010170+ long unsigned near CPart::GetPiece()
+0001:00010160+ CFighter near * near CPart::GetFighter()
+0001:00010130+ long unsigned near CBoard::OutOfBounds( short, short )
+0001:00010120+ short near CBoard::GetXSize()
+0001:00010110+ short near CBoard::GetYSize()
+0001:00010100+ short unsigned near CBoard::GetTotalVillages()
+0001:000100f0+ long near CBoard::GetTurnsP1()
+0001:000100e0+ long near CBoard::GetDestroyedP1()
+0001:000100d0+ long near CBoard::GetTurnsP2()
+0001:000100c0+ long near CBoard::GetDestroyedP2()
+0001:000100a0+ long unsigned near CBoard::HasWonP1()
+0001:00010070+ near CBoard::~CBoard()
+0001:00010060+ short near CFighter::GetDestX()
+0001:00010050+ short near CFighter::GetDestY()
+0001:00010040+ short unsigned near CFighter::GetAttack()
+0001:00010030+ short unsigned near CFighter::GetDefense()
+0001:00010020+ short unsigned near CFighter::GetControl()
+0001:00010010+ long unsigned near CFighter::HasFighter()
+0001:00010000+ long unsigned near CFighter::GetPiece()
+0001:0000fff0+ near CBindMainWindow::CBindMainWindow()
+0001:0000ffe0+ void near CBindMainWindow::Set( CMainWindow near & )
+0001:0000b500+ void near CBindMainWindow::Add( short, short )
+0001:0000b54c+ void near CBindMainWindow::Move( short, short )
+0001:0000b614+ void near CBindMainWindow::Destroy( short, short )
+0001:0000b624* void near CMainWindow::Destroying( short, short )
+0001:0000b944+ long unsigned near CMainWindow::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:0000bc70+ near CMainWindow::CMainWindow()
+0001:0000bdf8+ long unsigned near CMainWindow::OnQueryKeysHelp( void near * near & )
+0001:0000be04+ long unsigned near CMainWindow::OnCreate( void near * near &, void near *, _CREATESTRUCT near * )
+0001:0000beb8+ long unsigned near CMainWindow::OnDestroy( void near * near & )
+0001:0000bf30* void near CMainWindow::UpdatePlayer()
+0001:0000bf5c* void near CMainWindow::DisplayPiece( short, short, long unsigned )
+0001:0000bf98+ void near CMainWindow::DisplayPiece( long unsigned, short, short, long unsigned )
+0001:0000c084* void near CMainWindow::DisplayActionPiece( long unsigned, short, short, long unsigned )
+0001:0000c0f0+ void near CMainWindow::MakeFocus( short, short )
+0001:0000c4c0+ void near CMainWindow::UpdateControl( short, short )
+0001:0000c688+ void near CMainWindow::SetDest( long unsigned, short, short, long unsigned )
+0001:0000c758+ long unsigned near CMainWindow::OnMouseMove( void near * near &, short, short, short unsigned )
+0001:0000c830+ void near CMainWindow::DisplaySelect( long unsigned )
+0001:0000c944+ void near CMainWindow::DisplayDest( long unsigned )
+0001:0000ca20* void near CMainWindow::Adding( short, short )
+0001:0000ca64* void near CMainWindow::Moving( short, short )
+0001:0000cb20+ long unsigned near CMainWindow::OnPaint( void near * near & )
+0001:0000cbe8* void near CMainWindow::RepaintAll()
+0001:0000cc28* void near CMainWindow::ScrollBarNewPos( short unsigned, short, short, short, long unsigned )
+0001:0000ccd0* void near CMainWindow::GetTotalViewed()
+0001:0000cd60+ long unsigned near CMainWindow::OnHScrollLineLeft( void near * near &, short unsigned )
+0001:0000cf34+ long unsigned near CMainWindow::OnHScrollPageLeft( void near * near &, short unsigned )
+0001:0000d120+ long unsigned near CMainWindow::OnHScrollLineRight( void near * near &, short unsigned )
+0001:0000d2fc+ long unsigned near CMainWindow::OnHScrollPageRight( void near * near &, short unsigned )
+0001:0000d4f0+ long unsigned near CMainWindow::OnHScrollSliderPosition( void near * near &, short unsigned, short )
+0001:0000d698+ long unsigned near CMainWindow::OnVScrollLineUp( void near * near &, short unsigned )
+0001:0000d86c+ long unsigned near CMainWindow::OnVScrollPageUp( void near * near &, short unsigned )
+0001:0000da58+ long unsigned near CMainWindow::OnVScrollLineDown( void near * near &, short unsigned )
+0001:0000dc2c+ long unsigned near CMainWindow::OnVScrollPageDown( void near * near &, short unsigned )
+0001:0000de20+ long unsigned near CMainWindow::OnVScrollSliderPosition( void near * near &, short unsigned, short )
+0001:0000dfc8+ long unsigned near CMainWindow::OnChar( void near * near &, short unsigned, char unsigned, char unsigned, short unsigned, short unsigned )
+0001:0000e03c+ void near CMainWindow::FindNext()
+0001:0000e0e8* void near CMainWindow::Play( short unsigned, long unsigned )
+0001:0000e130+ void near CMainWindow::Turn()
+0001:0000e3d8+ long unsigned near CMainWindow::OnCmdOther( void near * near &, short unsigned, long unsigned )
+0001:0000e420+ void near CMainWindow::Target( long unsigned )
+0001:0000e514+ long unsigned near CMainWindow::OnCmdMenu( void near * near &, short unsigned, long unsigned )
+0001:0000e928+ void near CMainWindow::Select( short, short )
+0001:0000ea24+ long unsigned near CMainWindow::OnButton1Down( void near * near &, short, short, short unsigned, short unsigned )
+0001:0000eac0+ long unsigned near CMainWindow::RightClick( short, short )
+0001:0000ecd0+ long unsigned near CMainWindow::OnButton2Down( void near * near &, short, short, short unsigned, short unsigned )
+0001:0000ecf0+ long unsigned near CMainWindow::OnButton3Down( void near * near &, short, short, short unsigned, short unsigned )
+0001:0000ed0c* void near CMainWindow::MenuTargetOne( long, long )
+0001:0000ed4c* void near CMainWindow::MenuTargetTwo( long, long )
+0001:0000ed8c* void near CMainWindow::MenuRescueTwo( long, long )
+0001:0000edcc+ void near CMainWindow::GameOver()
+0001:0000f008* void near CMainWindow::HighScores()
+0001:0000f080* void near CMainWindow::About()
+0001:0000f100* void near CMainWindow::RegisterMe()
+0001:0000f174+ void near CMainWindow::SetPlayers()
+0001:0000f32c+ void near CMainWindow::SetupResources()
+0001:0000f510+ void near CMainWindow::SetMap()
+0001:0000fc8c+ long unsigned near CMainWindow::OnSize( void near * near &, short, short, short, short )
+0001:0000ffc0+ near CRegisterMeDlg::CRegisterMeDlg()
+0001:0000ffa0+ near CSliderWindow::CSliderWindow()
+0001:0000ff80+ near CButtonWindow::CButtonWindow()
+0001:0000ff60+ near CScrollBarWindow::CScrollBarWindow()
+0001:0000ff50+ near CWindow::CWindow( CWindow const near & )
+0001:0000fe14  main_
+Module: map.obj(M:\wargame\map.cpp)
+0001:00010220+ long unsigned near CMapDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:0001035c+ long unsigned near CMapDlg::OnChar( void near * near &, short unsigned, char unsigned, char unsigned, short unsigned, short unsigned )
+0001:00010380+ long unsigned near CMapDlg::OnInitDlg( void near * near &, CWindow, void near * )
+0001:000104b4+ long unsigned near CMapDlg::OnSliderChange( void near * near &, short unsigned, long unsigned )
+0001:00010570+ long unsigned near CMapDlg::OnButtonClicked( void near * near &, short unsigned )
+0001:0001060c+ long unsigned near CMapDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+0001:00010620  near CMapDlg::CMapDlg()
+0001:00010794  void near CMapDlg::Set( short unsigned, short unsigned, short unsigned, short unsigned, short unsigned, short unsigned, short unsigned, short unsigned, long unsigned )
+0001:000107d4  void near CMapDlg::Get( short unsigned near &, short unsigned near &, short unsigned near &, short unsigned near &, short unsigned near &, short unsigned near &, short unsigned near &, short unsigned near &, long unsigned near & )
+0001:00010830+ void near CMapDlg::UpdateAll()
+Module: players.obj(M:\wargame\players.cpp)
+0001:00010910+ long unsigned near CPlayersDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:00010a54+ long unsigned near CPlayersDlg::OnChar( void near * near &, short unsigned, char unsigned, char unsigned, short unsigned, short unsigned )
+0001:00010a78+ long unsigned near CPlayersDlg::OnInitDlg( void near * near &, CWindow, void near * )
+0001:00010bbc+ long unsigned near CPlayersDlg::OnSliderChange( void near * near &, short unsigned, long unsigned )
+0001:00010bf0+ long unsigned near CPlayersDlg::OnButtonClicked( void near * near &, short unsigned )
+0001:00010ea4+ long unsigned near CPlayersDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+0001:00010eb8  near CPlayersDlg::CPlayersDlg()
+0001:00010f70* void near CPlayersDlg::UpdateP1()
+0001:00010fd8* void near CPlayersDlg::UpdateP2()
+0001:00011040  void near CPlayersDlg::Set( long unsigned, long unsigned, short unsigned )
+0001:0001104c  void near CPlayersDlg::Get( long unsigned near &, long unsigned near &, short unsigned near & )
+Module: register.obj(M:\wargame\register.cpp)
+0002:000008c4+ char near * near g_CodeFile
+0001:00011060+ long unsigned near ToSerialNo( char near * )
+0001:000110c0* long unsigned near CodeToLong( char near * )
+0001:000110e8  long unsigned near CRegisterDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:00011144  long unsigned near CRegisterDlg::OnInitDlg( void near * near &, CWindow, void near * )
+0001:00011178  long unsigned near CRegisterDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+0001:000111b8+ void near CRegisterDlg::CheckCode()
+0001:0001131c  long unsigned near VerifyRegister()
+Module: regme.obj(M:\wargame\regme.cpp)
+0001:00011380  long unsigned near CRegisterMeDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:000113f4  long unsigned near CRegisterMeDlg::OnChar( void near * near &, short unsigned, char unsigned, char unsigned, short unsigned, short unsigned )
+0001:00011420  long unsigned near CRegisterMeDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+Module: resource.obj(M:\wargame\resource.cpp)
+0001:00011430  long unsigned near CResourceDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:000114e4  long unsigned near CResourceDlg::OnChar( void near * near &, short unsigned, char unsigned, char unsigned, short unsigned, short unsigned )
+0001:00011508  long unsigned near CResourceDlg::OnInitDlg( void near * near &, CWindow, void near * )
+0001:0001160c+ void near CResourceDlg::Set()
+0001:000116d0+ void near CResourceDlg::Get()
+0001:00011784  long unsigned near CResourceDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+Module: sorry.obj(M:\wargame\sorry.cpp)
+0001:000117d0  long unsigned near CSorryDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:00011844  long unsigned near CSorryDlg::OnChar( void near * near &, short unsigned, char unsigned, char unsigned, short unsigned, short unsigned )
+0001:00011870  long unsigned near CSorryDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+Module: thankyou.obj(M:\wargame\thankyou.cpp)
+0001:00011880  long unsigned near CThankYouDlg::ProcessMessage( void near * near &, long unsigned, void near *, void near * )
+0001:000118f4  long unsigned near CThankYouDlg::OnChar( void near * near &, short unsigned, char unsigned, char unsigned, short unsigned, short unsigned )
+0001:00011920  long unsigned near CThankYouDlg::OnCmdPushButton( void near * near &, short unsigned, long unsigned )
+Module: E:\WATCOM\lib386\plib3r.lib(pure_err)
+0001:0001192a  __wcpp_2_pure_error__
+Module: E:\WATCOM\lib386\plib3r.lib(vfun_err)
+0001:0001194f  __wcpp_2_undef_vfun__
+Module: E:\WATCOM\lib386\plib3r.lib(opnew)
+0001:00011974  void near * near operator new( int unsigned )
+Module: E:\WATCOM\lib386\plib3r.lib(opdel)
+0001:000119c0  void near operator delete( void near * )
+Module: E:\WATCOM\lib386\plib3r.lib(dtorarst)
+0001:000119cc  __wcpp_2_dtor_array_store__
+Module: E:\WATCOM\lib386\plib3r.lib(opdelarr)
+0001:000119ec  void near operator delete []( void near * )
+Module: E:\WATCOM\lib386\plib3r.lib(undefed)
+0001:000119f4  __wcpp_2_undefed_cdtor__
+Module: E:\WATCOM\lib386\os2\clib3r.lib(nmalloc)
+0001:00011a06  _nmalloc_
+0001:00011a06  malloc_
+0002:00000918  ___nheapbeg
+0002:0000091c  ___MiniHeapRover
+0002:00000920  ___LargestSizeB4MiniHeapRover
+Module: E:\WATCOM\lib386\os2\clib3r.lib(nrealloc)
+0001:00011af5* _nrealloc_
+0001:00011af5  realloc_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(nfree)
+0001:00011b6f  _nfree_
+0001:00011b6f  free_
+0002:00001d30  ___MiniHeapFreeRover
+Module: E:\WATCOM\lib386\os2\clib3r.lib(rand)
+0001:00011c07  rand_
+0001:00011c2b  srand_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(sprintf)
+0001:00011c4e  sprintf_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(delayos2)
+0001:00011c7e  delay_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(time)
+0001:00011c8c  time_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(cstrto32)
+0001:00011cbc  _cstart_
+Module: E:\WATCOM\lib386\plib3r.lib(prwdata)
+0002:00000924  __wint_pure_error_flag
+0002:00000926  __wint_undef_vfun_flag
+0002:00000928* __wint_module_init
+Module: E:\WATCOM\lib386\plib3r.lib(fatalerr)
+0001:00011d30  __wcpp_2_fatal_runtime_error__
+Module: E:\WATCOM\lib386\plib3r.lib(cppdata)
+0002:00001d34  __wint_thread_data
+0002:00001d54* ___wcpp_2_data_catch_completed_
+0002:00001d58  ___wcpp_2_data_dtreg_vfptrs_
+0002:00001d6c* __compiled_under_generic
+Module: E:\WATCOM\lib386\plib3r.lib(stabadt)
+0001:00011d50  __wcpp_2_dtor_array__
+Module: E:\WATCOM\lib386\os2\clib3r.lib(maino32)
+0002:0000092c  ___GetThreadPtr
+0002:00000930  __AccessFileH
+0002:00000934  __ReleaseFileH
+0002:00000938  __InitAccessH
+0002:0000093c  __FiniAccessH
+0002:00000940  __AccessIOB
+0002:00000944  __ReleaseIOB
+0002:00000948  __AccessNHeap
+0002:0000094c  __AccessFHeap
+0002:00000950  __ReleaseNHeap
+0001:00011d83  __threadstack_
+0001:00011d8a  __threadid_
+0001:00011d91  __OS2MainInit_
+0001:00011e56+ __OS2Init_
+0001:00011ed2  __os2_exit
+0001:00011f38  __exit_
+0002:00000954  __ReleaseFHeap
+0002:00000958  __AccessTDList
+0002:0000095c  __ReleaseTDList
+0002:00000960  ___sig_init_rtn
+0002:00000964  ___sig_fini_rtn
+0002:00000968  __threadstksize
+0002:0000096c  ___os2_exit_level
+0002:00001d70  ___Is_DLL
+0002:00001d74  ___FirstThreadData
+0002:00001d78+ ___hmodule
+0002:00001d7c+ ___saved_CS
+Module: E:\WATCOM\lib386\os2\clib3r.lib(memalloc)
+0001:00011f4c  __MemAllocator
+0001:00011ff4  __MemFree
+Module: E:\WATCOM\lib386\os2\clib3r.lib(grownear)
+0001:00012209  __ExpandDGROUP_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(nmemneed)
+0001:00012264  __nmemneed_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(heapmod)
+0002:00001e58  ___nheap_clean
+0002:00001e59  ___fheap_clean
+Module: E:\WATCOM\lib386\os2\clib3r.lib(nmsize)
+0001:00012267  _nmsize_
+0001:00012267* _msize_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(nexpand)
+0001:00012270  _nexpand_
+0001:00012270* _expand_
+0001:000122aa+ __HeapManager_expand_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(prtf)
+0001:00012448  __prtf_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(gtctmos2)
+0001:00012f61  __getctime_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(mktime)
+0001:00012fcc  mktime_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(main2o32)
+0001:00013120  __OS2Main
+Module: E:\WATCOM\lib386\os2\clib3r.lib(segdefns)
+0001:00000003  ___begtext
+0002:00000000* __nullarea
+0002:00001b34* __start_TI
+0002:00001b34* __end_TI
+Module: E:\WATCOM\lib386\os2\clib3r.lib(enterdb)
+0001:00013162  __EnterWVIDEO_
+0002:00000970+ ___WD_Present
+Module: E:\WATCOM\lib386\os2\clib3r.lib(xmsgo32)
+0001:00013188  __exit_with_msg_
+0001:000131b7  __fatal_runtime_error_
+Module: E:\WATCOM\lib386\plib3r.lib(stabarr)
+0001:00013201  __wcpp_2_arr_register__
+0002:00001b1c* rt_init __based("XI") __wcpp_2_data_stab_init_arr_
+Module: E:\WATCOM\lib386\plib3r.lib(stabdtor)
+0001:000133f8  __wcpp_2_destruct_internal__
+0001:00013402* __wcpp_2_destruct_all__
+0001:00013404* __wcpp_2_destruct__
+0001:00013416* __wcpp_2_destruct_after_all__
+0001:00013418* __wcpp_2_destruct_after__
+Module: E:\WATCOM\lib386\os2\clib3r.lib(regdata)
+0001:00013427* __RegisterThreadDataSize_
+0002:00000980  ___ThreadDataSize
+Module: E:\WATCOM\lib386\os2\clib3r.lib(set386)
+0001:00013440  memset_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(crwd386)
+0002:00000998* __psp
+0002:000009c3  __osmajor
+0002:000009c4  __osminor
+0002:000009ba* __Extender
+0002:000009bb* __ExtenderSubtype
+0002:000009bc* __X32VM
+0002:0000099c* __x386_stacklow
+0002:0000098c  __LpCmdLine
+0002:00000990  __LpPgmName
+0002:00000994* __LpDllName
+0002:00000984* __dynend
+0002:00000988  __curbrk
+0002:0000099c  __STACKLOW
+0002:000009a0* __STACKTOP
+0002:000009a4  __ASTACKSIZ
+0002:000009a8  __ASTACKPTR
+0002:000009ac* __cbyte
+0002:000009b0* __cbyte2
+0002:000009b4* __child
+0002:000009bd  __Envptr
+0002:000009c1* __Envseg
+0002:000009b8  __no87
+0002:000009c5* __FPE_handler
+0002:000009c5* ___FPE_handler
+Module: E:\WATCOM\lib386\os2\clib3r.lib(inirt386)
+0001:0001345a  __InitRtns
+0001:000134a5  __FiniRtns
+Module: E:\WATCOM\lib386\os2\clib3r.lib(mthread)
+0001:000134f5+ __AccessIOB_
+0001:000134ff+ __ReleaseIOB_
+0001:00013509+ __AccessFileH_
+0001:00013516+ __ReleaseFileH_
+0001:00013526+ __FiniAccessH_
+0001:00013531+ __CloseSemaphore_
+0001:00013560+ __AccessNHeap_
+0001:00013567+ __ReleaseNHeap_
+0001:00013571+ __AccessFHeap_
+0001:00013578+ __ReleaseFHeap_
+0001:0001357f+ __AccessTDList_
+0001:00013584+ __AccessSemaphore_
+0001:000135e4+ __ReleaseTDList_
+0001:000135e9+ __ReleaseSemaphore_
+0001:00013610+ __InitAccessH_
+0001:00013611+ __MultipleThread_
+0001:0001363f  __InitThreadData_
+0001:00013682  __OS2AddThread_
+0001:000136df  __OS2RemoveThread_
+0001:00013724  __InitMultipleThread_
+0002:000009cc+ ___AccessSema4
+0002:000009d0+ ___ReleaseSema4
+0002:000009d4+ ___CloseSema4
+0002:00001b34* ___AccessSema4Fini
+Module: E:\WATCOM\lib386\os2\clib3r.lib(growiomd)
+0001:00013872  __grow_iomode_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(exit)
+0001:0001391e+ __null_int23_exit_
+0001:0001391f  exit_
+0001:0001393a* _exit_
+0002:000009d8  ___atexit
+0002:000009dc  ___int23_exit
+0002:000009e0* ___FPE_handler_exit
+Module: E:\WATCOM\lib386\os2\clib3r.lib(heapen)
+0001:00013945* _heapenable_
+0002:000009e4  ___heap_enabled
+Module: E:\WATCOM\lib386\os2\clib3r.lib(nheapmin)
+0001:00013966  _nheapshrink_
+0001:00013966* _nheapmin_
+0001:00013966* _heapmin_
+0001:00013966* _heapshrink_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(amblksiz)
+0002:000009e8  __amblksiz
+Module: E:\WATCOM\lib386\os2\clib3r.lib(itoa)
+0001:00013a40+ utoa_
+0001:00013a8a  itoa_
+0001:00013a8a* _itoa_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(noefgfmt)
+0002:000009ec  ___EFG_printf
+0002:000009f0* ___EFG_scanf
+Module: E:\WATCOM\lib386\os2\clib3r.lib(ltoa)
+0001:00013adc  ultoa_
+0001:00013b26  ltoa_
+0001:00013b26* _ltoa_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(toupper)
+0001:00013b41  toupper_
+0001:00013b41* _toupper_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(timeutil)
+0001:00013b4f  __leapyear_
+0001:00013ca3  __isindst_
+0002:000006d0  ___diyr
+0002:000006ea  ___dilyr
+Module: E:\WATCOM\lib386\os2\clib3r.lib(gmtime)
+0001:00013f96  __brktime_
+0001:000140ab+ _gmtime_
+0001:000140c9* gmtime_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(tzset)
+0002:000009f4  ___start_dst
+0002:00000a18  ___end_dst
+0002:00000a3c  _timezone
+0002:00000a40  ___dst_adjust
+0002:00000a44+ _daylight
+0002:00000a86  _tzname
+0001:000140e0* __CacheOSTZ_
+0001:0001414c  tzset_
+0001:0001415a* __parse_tz_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(cmain386)
+0001:000144b0  __CMain
+Module: E:\WATCOM\lib386\os2\clib3r.lib(seg386)
+0000:00001234  __DOSseg__
+Module: E:\WATCOM\lib386\plib3r.lib(tssize)
+0001:00014524  __wcpp_2_ts_size__
+Module: E:\WATCOM\lib386\plib3r.lib(stabreg)
+0001:00014568  __wcpp_2_base_register__
+0001:00014581* __wcpp_2_base_deregister__
+Module: E:\WATCOM\lib386\plib3r.lib(stabtrav)
+0001:00014590  __wcpp_2_stab_entry__
+0001:000145be  __wcpp_2_stab_trav_init__
+0001:000145df  __wcpp_2_stab_trav_comp__
+0001:000145e4  __wcpp_2_stab_trav_next__
+0001:00014669  __wcpp_2_stab_trav_move__
+Module: E:\WATCOM\lib386\plib3r.lib(stabthrw)
+0001:00014713  __wcpp_2_corrupted_stack__
+0001:00014a4f* __wcpp_2_catch_done__
+0001:00014ca9+ __wcpp_2_dispatchable__
+0001:00014d02+ __wcpp_2_save_exc__
+0001:00014d80+ __wcpp_2_dispatch__
+0001:00014e78* __wcpp_2_rethrow__
+0001:00014e88* __wcpp_2_throw__
+0001:00014e92* __wcpp_2_throw_zero__
+0002:00001b22+ ___wcpp_2_data_init_longjmp_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(__stos)
+0001:00014f90  __STOSB
+0001:00014fc7* __STOSD
+Module: E:\WATCOM\lib386\os2\clib3r.lib(maxthrds)
+0002:00000a94  ___MaxThreads
+Module: E:\WATCOM\lib386\os2\clib3r.lib(trdalloc)
+0001:00015033  __InitThreadProcessing_
+0001:00015050  __FiniThreadProcessing_
+0002:00001fac  ___ThreadData
+Module: E:\WATCOM\lib386\os2\clib3r.lib(trdlist)
+0001:000150a1  __GetThreadData_
+0001:00015184  __AddThreadData_
+0001:000151e5  __RemoveThreadData_
+0001:0001522f  __FreeThreadDataList_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(calloc)
+0001:00015258  calloc_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(register)
+0001:00015273* _beginthread_
+0001:0001527a  _endthread_
+0001:00015281  __initthread_
+0001:00015288* __RegisterThreadData_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(iomode)
+0001:000152c7* __IOMode_
+0001:0001531c* __SetIOMode_
+0002:00000aa4  ___NFiles
+0002:00000aa8  ___init_mode
+0002:00000af8  __iomode
+Module: E:\WATCOM\lib386\os2\clib3r.lib(errno)
+0001:00015331  __get_errno_ptr_
+0001:0001533b* __get_doserrno_ptr_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(getenv)
+0001:00015345  getenv_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(stack386)
+0001:000153a6  stackavail_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(cinit)
+0001:000153d5  __CommonInit_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(___argc)
+0002:00001fb4  ____Argc
+0002:00001fb8  ____Argv
+Module: E:\WATCOM\lib386\plib3r.lib(bittest)
+0001:000153e0  __wcpp_2_bit_test__
+Module: E:\WATCOM\lib386\plib3r.lib(callterm)
+0001:00015400  __wcpp_2_call_terminate__
+Module: E:\WATCOM\lib386\plib3r.lib(tsequiv)
+0001:00015411  __wcpp_2_ts_equiv__
+Module: E:\WATCOM\lib386\plib3r.lib(callunex)
+0001:00015450  __wcpp_2_call_unexpected__
+Module: E:\WATCOM\lib386\os2\clib3r.lib(stjmp386)
+0001:00015456* _setjmp_
+0001:00015495  longjmp_
+Module: E:\WATCOM\lib386\plib3r.lib(allocexc)
+0001:00015534  __wcpp_2_alloc_exc__
+0001:0001566f  __wcpp_2_free_exc__
+0001:0001569c  __wcpp_2_pop_exc__
+0001:000156ab  __wcpp_2_push_exc__
+Module: E:\WATCOM\lib386\os2\clib3r.lib(ljmphdl)
+0002:00000b04  ___longjmp_handler
+Module: E:\WATCOM\lib386\os2\clib3r.lib(thrdmax)
+0001:000156b9  __GETMAXTHREADS
+Module: E:\WATCOM\lib386\os2\clib3r.lib(thredo32)
+0001:0001573f  __CBeginThread_
+0001:000157d6  __CEndThread_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(isattos2)
+0001:000157f2  isatty_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(environ)
+0002:00000b08  _environ
+0002:00000b0c  ___env_mask
+Module: E:\WATCOM\lib386\os2\clib3r.lib(strnicmp)
+0001:00015820  strnicmp_
+0001:00015820* _strnicmp_
+Module: E:\WATCOM\lib386\plib3r.lib(termnate)
+0001:00015874  void near terminate()
+Module: E:\WATCOM\lib386\plib3r.lib(unexpect)
+0001:000158c0  void near unexpected()
+Module: E:\WATCOM\lib386\plib3r.lib(areaexc)
+0002:00000b10  ___EXC_AREA
+Module: E:\WATCOM\lib386\os2\clib3r.lib(chk8087)
+0001:000158f4* __init_8087_
+0001:00015901  _fpreset_
+0001:0001590b+ __chk8087_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(setenvp)
+0001:00015950  __setenvp_
+Module: E:\WATCOM\lib386\os2\clib3r.lib(8087cw)
+0002:00001b10  __8087cw
+Module: E:\WATCOM\lib386\os2\clib3r.lib(ini87386)
+0001:00015a08  __init_80x87
+Module: E:\WATCOM\lib386\os2\clib3r.lib(_8087386)
+0002:00001b14  __8087
+0002:00001b15  __real87
+
+
+                        +----------------------+
+                        |   Imported Symbols   |
+                        +----------------------+
+
+Symbol                              Module
+======                              ======
+
+WinSendMsg                          PMWIN
+WinLoadMenu                         PMWIN
+WinPopupMenu                        PMWIN
+WinDlgBox                           PMWIN
+WinLoadDlg                          PMWIN
+WinCreateDlg                        PMWIN
+WinProcessDlg                       PMWIN
+WinDismissDlg                       PMWIN
+WinQueryWindowText                  PMWIN
+WinQueryWindowRect                  PMWIN
+WinInvalidateRect                   PMWIN
+WinMapWindowPoints                  PMWIN
+WinCreateWindow                     PMWIN
+WinCreateStdWindow                  PMWIN
+WinAssociateHelpInstance            HELPMGR
+WinQueryHelpInstance                HELPMGR
+WinCreateHelpInstance               HELPMGR
+WinDestroyHelpInstance              HELPMGR
+WinSetWindowPtr                     PMWIN
+WinQueryWindowPtr                   PMWIN
+WinDefWindowProc                    PMWIN
+WinQueryWindow                      PMWIN
+WinWindowFromID                     PMWIN
+WinDefDlgProc                       PMWIN
+WinInitialize                       PMWIN
+WinCreateMsgQueue                   PMWIN
+WinDestroyMsgQueue                  PMWIN
+WinTerminate                        PMWIN
+WinRegisterClass                    PMWIN
+DosOpen                             DOSCALLS
+DosClose                            DOSCALLS
+DosRead                             DOSCALLS
+DosWrite                            DOSCALLS
+DosSetFilePtr                       DOSCALLS
+GpiLoadBitmap                       PMGPI
+GpiDeleteBitmap                     PMGPI
+WinDrawBitmap                       PMWIN
+WinBeginPaint                       PMWIN
+WinEndPaint                         PMWIN
+WinDrawText                         PMWIN
+WinSetWindowPos                     PMWIN
+WinGetPS                            PMWIN
+WinReleasePS                        PMWIN
+WinDestroyWindow                    PMWIN
+GpiSetColor                         PMGPI
+GpiMove                             PMGPI
+GpiLine                             PMGPI
+GpiErase                            PMGPI
+WinAlarm                            PMWIN
+WinGetMsg                           PMWIN
+WinDispatchMsg                      PMWIN
+DosSleep                            DOSCALLS
+DosAllocMem                         DOSCALLS
+DosQuerySysInfo                     DOSCALLS
+DosSetRelMaxFH                      DOSCALLS
+DosFreeMem                          DOSCALLS
+DosExitList                         DOSCALLS
+DosExit                             DOSCALLS
+DosGetDateTime                      DOSCALLS
+DosCloseMutexSem                    DOSCALLS
+DosCreateMutexSem                   DOSCALLS
+DosRequestMutexSem                  DOSCALLS
+DosReleaseMutexSem                  DOSCALLS
+DosUnwindException                  DOSCALLS
+DosPostEventSem                     DOSCALLS
+DosCreateEventSem                   DOSCALLS
+DosCreateThread                     DOSCALLS
+DosWaitEventSem                     DOSCALLS
+DosCloseEventSem                    DOSCALLS
+DosQueryHType                       DOSCALLS
+DosDevConfig                        DOSCALLS
+
+
+                        +--------------------+
+                        |   Libraries Used   |
+                        +--------------------+
+
+E:\WATCOM\lib386\os2\clib3r.lib
+E:\WATCOM\lib386\plib3r.lib
+E:\WATCOM\lib386\os2\os2386.lib
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  00010000 (65536.)
+Memory size:  000279f0 (162288.)
+Entry point address: 0001:00011cbc
+Link time: 00:06.38

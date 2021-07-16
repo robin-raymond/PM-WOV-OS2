@@ -1,0 +1,64 @@
+DLGINCLUDE DID_HIGH_SCORES "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_HIGH_SCORES LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM WOV - Hall of Fame", DID_HIGH_SCORES, 55, 15, 260, 129, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        CONTROL         "", -1, 5, 105, 115, 20, WC_STATIC, SS_FGNDFRAME | 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", -1, 5, 25, 115, 80, WC_STATIC, SS_FGNDFRAME | 
+                        WS_VISIBLE
+        CTEXT           "RANK", -1, 10, 110, 105, 10, DT_VCENTER | NOT 
+                        WS_GROUP
+        CTEXT           "ADMIRAL", -1, 10, 90, 105, 10, DT_VCENTER
+        CTEXT           "SARGENT MAJOR", -1, 10, 80, 105, 10, DT_VCENTER
+        CTEXT           "SARGENT", -1, 10, 70, 105, 10, DT_VCENTER
+        CTEXT           "CORPORAL", -1, 10, 60, 105, 10, DT_VCENTER
+        CTEXT           "PRIVATE FIRST CLASS", -1, 10, 50, 105, 10, 
+                        DT_VCENTER
+        CTEXT           "PRIVATE SECOND CLASS", -1, 10, 40, 105, 10, 
+                        DT_VCENTER
+        CTEXT           "PRIVATE THIRD CLASS", -1, 10, 30, 105, 10, 
+                        DT_VCENTER
+        CONTROL         "", -1, 120, 105, 65, 20, WC_STATIC, SS_FGNDFRAME | 
+                        WS_GROUP | WS_VISIBLE
+        CTEXT           "SOLDIER", -1, 125, 110, 55, 10, DT_VCENTER
+        CONTROL         "", -1, 120, 25, 65, 80, WC_STATIC, SS_FGNDFRAME | 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_ADMIRAL_S, 125, 90, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_SARGENT_MAJOR_S, 125, 80, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_SARGENT_S, 125, 70, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_CORPORAL_S, 125, 60, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_PRIVATE_1_S, 125, 50, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_PRIVATE_2_S, 125, 40, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_PRIVATE_3_S, 125, 30, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", -1, 185, 105, 65, 20, WC_STATIC, SS_FGNDFRAME | 
+                        WS_GROUP | WS_VISIBLE
+        CTEXT           "POINTS", -1, 190, 110, 55, 10, DT_VCENTER
+        CONTROL         "", -1, 185, 25, 65, 80, WC_STATIC, SS_FGNDFRAME | 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_ADMIRAL_P, 190, 90, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_SARGENT_MAJOR_P, 190, 80, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_SARGENT_P, 190, 70, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_CORPORAL_P, 190, 60, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_PRIVATE_1_P, 190, 50, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_PRIVATE_2_P, 190, 40, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_PRIVATE_3_P, 190, 30, 55, 10, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        PUSHBUTTON      "~Okay", BID_OKAY, 5, 5, 245, 15
+    END
+END

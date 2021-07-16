@@ -1,0 +1,77 @@
+DLGINCLUDE DID_RESOURCES "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_RESOURCES LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM WOV - Building Resources", DID_RESOURCES, 50, 30, 265, 109, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        CONTROL         "", SLID_GROUND_FORCES, 95, 85, 115, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_HOMELEFT | SLS_PRIMARYSCALE1 | WS_GROUP | 
+                        WS_TABSTOP | WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", SLID_TANK, 95, 75, 115, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_HOMELEFT | SLS_PRIMARYSCALE1 | WS_TABSTOP | 
+                        WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", SLID_FAST_TANK, 95, 65, 115, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_HOMELEFT | SLS_PRIMARYSCALE1 | WS_TABSTOP | 
+                        WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", SLID_BOMBER_PLANE, 95, 55, 115, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_HOMELEFT | SLS_PRIMARYSCALE1 | WS_TABSTOP | 
+                        WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", SLID_FIGHTER_PLANE, 95, 45, 115, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_HOMELEFT | SLS_PRIMARYSCALE1 | WS_TABSTOP | 
+                        WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", SLID_LONG_RANGE_MISSILE, 95, 35, 115, 10, 
+                        WC_SLIDER, SLS_HORIZONTAL | SLS_CENTER | 
+                        SLS_SNAPTOINCREMENT | SLS_HOMELEFT | 
+                        SLS_PRIMARYSCALE1 | WS_TABSTOP | WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", SLID_SAND_BUGGY, 95, 25, 115, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_HOMELEFT | SLS_PRIMARYSCALE1 | WS_TABSTOP | 
+                        WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", SLID_SEMI_WATER_FORCES, 95, 15, 115, 10, 
+                        WC_SLIDER, SLS_HORIZONTAL | SLS_CENTER | 
+                        SLS_SNAPTOINCREMENT | SLS_HOMELEFT | 
+                        SLS_PRIMARYSCALE1 | WS_TABSTOP | WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        CONTROL         "", SLID_RESCUE_REPAIR, 95, 5, 115, 10, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_HOMELEFT | SLS_PRIMARYSCALE1 | WS_TABSTOP | 
+                        WS_VISIBLE
+                        CTLDATA 12, 0, 100, 0, 100, 0
+        DEFPUSHBUTTON   "~Okay", BID_OKAY, 215, 90, 45, 15, WS_GROUP
+        PUSHBUTTON      "~Cancel", BID_CANCEL, 215, 70, 45, 15
+        PUSHBUTTON      "~Help", BID_HELP, 215, 5, 45, 15, BS_HELP
+        LTEXT           "Ground Forces", -1, 5, 85, 85, 10, DT_VCENTER
+        LTEXT           "Tank", -1, 5, 75, 85, 10, DT_VCENTER | NOT WS_GROUP
+        LTEXT           "Fast Tank", -1, 5, 65, 85, 10, DT_VCENTER | NOT 
+                        WS_GROUP
+        LTEXT           "Bomber Plane", -1, 5, 55, 85, 10, DT_VCENTER | NOT 
+                        WS_GROUP
+        LTEXT           "Fighter Plane", -1, 5, 45, 85, 10, DT_VCENTER | NOT 
+                        WS_GROUP
+        LTEXT           "Long Range Missile ...", -1, 5, 35, 85, 10, 
+                        DT_VCENTER | NOT WS_GROUP
+        LTEXT           "Sand Buggy", -1, 5, 25, 85, 10, DT_VCENTER | NOT 
+                        WS_GROUP
+        LTEXT           "Semi-water Forces", -1, 5, 15, 85, 10, DT_VCENTER | 
+                        NOT WS_GROUP
+        LTEXT           "Rescue-Repair Hele...", -1, 5, 5, 85, 10, 
+                        DT_VCENTER | NOT WS_GROUP
+        CTEXT           "Effort", -1, 130, 95, 45, 10, DT_VCENTER
+        LTEXT           "0%", -1, 100, 95, 25, 10, DT_VCENTER | NOT WS_GROUP
+        RTEXT           "100%", -1, 180, 95, 25, 10, DT_VCENTER | NOT 
+                        WS_GROUP
+    END
+END

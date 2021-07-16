@@ -1,0 +1,18 @@
+DLGINCLUDE DID_SORRY "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_SORRY LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "WOV - Sorry", DID_SORRY, 45, 35, 270, 64, WS_VISIBLE, 
+            FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "~Sorry", BID_OKAY, 225, 45, 40, 14, WS_GROUP
+        PUSHBUTTON      "~Help", BID_HELP, 225, 5, 40, 14, BS_HELP
+        ICON            ID_RESOURCE, ID_RESOURCE, 5, 45, 20, 16, WS_GROUP
+        LTEXT           "The registration number you entered is incorrect, p"
+                        "lease try again. If you are considering registering"
+                        " this game, please refer to Help->Index. Without yo"
+                        "ur support, I am not able to complete bigger and be"
+                        "tter games for your personal enjoyment.", -1, 35, 5, 
+                        180, 53, DT_WORDBREAK | NOT WS_GROUP
+    END
+END

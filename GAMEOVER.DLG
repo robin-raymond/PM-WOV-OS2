@@ -1,0 +1,41 @@
+DLGINCLUDE DID_GAME_OVER "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_GAME_OVER LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM WOV - Game Over", DID_GAME_OVER, 80, 15, 255, 189, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        GROUPBOX        "Player 1", -1, 5, 5, 125, 180
+        GROUPBOX        "Player 2", -1, 130, 5, 125, 180, NOT WS_GROUP
+        PUSHBUTTON      "~Okay", BID_OKAY, 10, 10, 115, 14
+        PUSHBUTTON      "~Okay", BID_NEXT, 135, 10, 115, 14
+        CONTROL         "", UID_PIC_WIN_P1, 10, 125, 115, 50, "CWindow", 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", UID_PIC_WIN_P2, 135, 125, 115, 50, "CWindow", 
+                        WS_VISIBLE
+        CTEXT           "Rank", -1, 10, 110, 115, 8, DT_VCENTER | NOT 
+                        WS_GROUP
+        CTEXT           "Rank", -1, 135, 110, 115, 8, DT_VCENTER | NOT 
+                        WS_GROUP
+        CONTROL         "", UID_RANK_P1, 10, 95, 115, 14, "CWindow", 
+                        WS_VISIBLE
+        CONTROL         "", UID_RANK_P2, 135, 95, 115, 14, "CWindow", 
+                        WS_VISIBLE
+        CTEXT           "Weapons Destroyed", -1, 10, 80, 115, 8, DT_VCENTER | 
+                        NOT WS_GROUP
+        CONTROL         "", UID_WEAPONS_P1, 10, 65, 115, 14, "CWindow", 
+                        WS_VISIBLE
+        CTEXT           "Weapons Destroyed", -1, 135, 80, 115, 8, DT_VCENTER | 
+                        NOT WS_GROUP
+        CONTROL         "", UID_WEAPONS_P2, 135, 65, 115, 14, "CWindow", 
+                        WS_VISIBLE
+        CONTROL         "", UID_POINTS_P1, 10, 35, 115, 14, "CWindow", 
+                        WS_VISIBLE
+        CTEXT           "Points", -1, 10, 50, 115, 8, DT_VCENTER | NOT 
+                        WS_GROUP
+        CTEXT           "Points", -1, 135, 50, 115, 8, DT_VCENTER | NOT 
+                        WS_GROUP
+        CONTROL         "", UID_POINTS_P2, 135, 35, 115, 14, "CWindow", 
+                        WS_VISIBLE
+    END
+END

@@ -1,0 +1,18 @@
+DLGINCLUDE DID_REGISTRATION "M:\WarGame\WARGAME.H"
+
+DLGTEMPLATE DID_REGISTRATION LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "PM WOV - Registration", DID_REGISTRATION, 80, 35, 190, 84, 
+            WS_VISIBLE, FCF_TITLEBAR
+    BEGIN
+        DEFPUSHBUTTON   "~Okay", BID_OKAY, 145, 65, 40, 15
+        PUSHBUTTON      "~Help", BID_HELP, 145, 5, 40, 15, BS_HELP
+        ENTRYFIELD      "RAB#", FID_CODE_1, 52, 67, 81, 8, ES_MARGIN
+        ENTRYFIELD      "0", FID_CODE_2, 52, 52, 81, 8, ES_MARGIN
+        LTEXT           "Thank you for your support!", -1, 5, 5, 125, 8
+        LTEXT           "Your liscence for this game will be valid in all 1."
+                        "x versions.", -1, 5, 15, 130, 20, DT_WORDBREAK
+        CTEXT           "Code #1:", -1, 5, 65, 40, 10, DT_VCENTER
+        CTEXT           "Code #2:", -1, 5, 50, 40, 10, DT_VCENTER
+    END
+END

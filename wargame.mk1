@@ -1,0 +1,150 @@
+!define BLANK ""
+m:\wargame\citem.obj : m:\common\citem.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 \common\citem.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otex&
+an -3r -bt=os2 -mf
+
+m:\wargame\coblist.obj : m:\common\coblist.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 \common\coblist.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -ot&
+exan -3r -bt=os2 -mf
+
+m:\wargame\cwindow.obj : m:\common\cwindow.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 \common\cwindow.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -ot&
+exan -3r -bt=os2 -mf
+
+m:\wargame\memory.obj : m:\common\memory.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 \common\memory.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -ote&
+xan -3r -bt=os2 -mf
+
+m:\wargame\nfile.obj : m:\common\nfile.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 \common\nfile.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otex&
+an -3r -bt=os2 -mf
+
+m:\wargame\platform.obj : m:\common\platform.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 \common\platform.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -o&
+texan -3r -bt=os2 -mf
+
+m:\wargame\abandon.obj : m:\wargame\abandon.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 abandon.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3r&
+ -bt=os2 -mf
+
+m:\wargame\about.obj : m:\wargame\about.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 about.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3r -&
+bt=os2 -mf
+
+m:\wargame\board.obj : m:\wargame\board.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 board.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3r -&
+bt=os2 -mf
+
+m:\wargame\control.obj : m:\wargame\control.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 control.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3r&
+ -bt=os2 -mf
+
+m:\wargame\gameover.obj : m:\wargame\gameover.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 gameover.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3&
+r -bt=os2 -mf
+
+m:\wargame\hiscore.obj : m:\wargame\hiscore.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 hiscore.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3r&
+ -bt=os2 -mf
+
+m:\wargame\main.obj : m:\wargame\main.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 main.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3r -b&
+t=os2 -mf
+
+m:\wargame\map.obj : m:\wargame\map.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 map.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3r -bt&
+=os2 -mf
+
+m:\wargame\players.obj : m:\wargame\players.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 players.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3r&
+ -bt=os2 -mf
+
+m:\wargame\register.obj : m:\wargame\register.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 register.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3&
+r -bt=os2 -mf
+
+m:\wargame\regme.obj : m:\wargame\regme.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 regme.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3r -&
+bt=os2 -mf
+
+m:\wargame\resource.obj : m:\wargame\resource.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 resource.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3&
+r -bt=os2 -mf
+
+m:\wargame\sorry.obj : m:\wargame\sorry.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 sorry.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3r -&
+bt=os2 -mf
+
+m:\wargame\thankyou.obj : m:\wargame\thankyou.cpp .AUTODEPEND
+ @m:
+ cd m:\wargame
+ *wpp386 thankyou.cpp -i=E:\WATCOM\h;E:\WATCOM\h\os2 -w4 -e25 -zq -otexan -3&
+r -bt=os2 -mf
+
+m:\wargame\wargame.res : m:\wargame\wargame.rc .AUTODEPEND
+ @m:
+ cd m:\wargame
+ rc -i $[: -i E:\WATCOM\h -i E:\WATCOM\h\os2 -r wargame.rc wargame.res
+
+m:\wargame\wargame.exe : m:\wargame\citem.obj m:\wargame\coblist.obj m:\warg&
+ame\cwindow.obj m:\wargame\memory.obj m:\wargame\nfile.obj m:\wargame\platfo&
+rm.obj m:\wargame\abandon.obj m:\wargame\about.obj m:\wargame\board.obj m:\w&
+argame\control.obj m:\wargame\gameover.obj m:\wargame\hiscore.obj m:\wargame&
+\main.obj m:\wargame\map.obj m:\wargame\players.obj m:\wargame\register.obj &
+m:\wargame\regme.obj m:\wargame\resource.obj m:\wargame\sorry.obj m:\wargame&
+\thankyou.obj m:\wargame\wargame.res .AUTODEPEND
+ @m:
+ cd m:\wargame
+ @%write wargame.lk1 NAME wargame
+ @%append wargame.lk1 FIL citem.obj,coblist.obj,cwindow.obj,memory.obj,nfile&
+.obj,platform.obj,abandon.obj,about.obj,board.obj,control.obj,gameover.obj,h&
+iscore.obj,main.obj,map.obj,players.obj,register.obj,regme.obj,resource.obj,&
+sorry.obj,thankyou.obj
+ @%append wargame.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b wargame.imp 
+ @%append wargame.lk1 LIBR wargame.imp
+!endif
+ *wlink SYS os2v2 pm op m op maxe=25 op q op symf @wargame.lk1
+!ifneq BLANK "wargame.res"
+ rc -i $[: -i E:\WATCOM\h -i E:\WATCOM\h\os2 wargame.res wargame.exe
+!endif
+

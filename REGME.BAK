@@ -1,0 +1,41 @@
+#define _COMMON_CWINDOW_H_
+#include "common.h"
+
+#include "regme.hpp"
+
+
+PPROCESSHEADER(CRegisterMeDlg)
+{
+	STARTPROCESSING()
+
+		PONCHAR()
+
+		STARTCMDPROCESSING()
+			PONCMDPUSHBUTTON()
+		ENDCMDPROCESSING()
+	ENDPROCESSING()
+}
+
+BOOL CRegisterMeDlg::OnChar(MRESULT &, USHORT flags, UCHAR, UCHAR, USHORT, USHORT Virtual)
+{
+	if (flags & KC_KEYUP)
+		return FALSE;
+
+	if (Virtual == VK_ESC)
+		return TRUE;
+
+	return FALSE;
+}
+
+
+BOOL CRegisterMeDlg::OnCmdPushButton(MRESULT &, USHORT Which, BOOL)
+{
+	switch(Which)
+	{
+		case BID_OKAY:
+							DismissDlg(TRUE);
+							return TRUE;
+	}
+	return FALSE;
+}
+
